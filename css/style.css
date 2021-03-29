@@ -6,6 +6,7 @@
 
 * {
     font-family: 'Play', sans-serif;
+    box-sizing: border-box;
 }
 
 html, body {
@@ -62,10 +63,12 @@ header a {
     margin-right: 15px;
     font-weight: 600;
 }
+main {
+    color: var(--text-clr-main);
+}
 
 .box-1 {
     grid-area: box-1;
-    border: 1px solid #999999;
     border-radius: 5px;
     padding: 10px;
     text-align: center;
@@ -78,6 +81,14 @@ header a {
     border: 1px solid #999999;
     border-radius: 5px;
     padding: 10px;
+    text-align: center;
+}
+.box-2 button {
+    color: #333333;
+    background-color: var(--text-clr-second);
+    padding: 5px;
+    border-radius: 6px;
+    margin-top: 10px;
 }
 .box-3 {
     grid-area: box-3;
@@ -101,26 +112,44 @@ header a {
 
 .box-4 {
     grid-area: box-4;
-    border: 1px solid #999999;
     border-radius: 5px;
     padding: 10px;
+    line-height: 30px;
+}
+.box-4 h1 {
+    color: var(--text-clr-second);
 }
 .box-5 {
     grid-area: box-5;
-    border: 1px solid #999999;
+
     border-radius: 5px;
     padding: 10px;
+    line-height: 30px;
+}
+.box-5 label {
+    color: var(--text-clr-second);
 }
 .box-5 input[type=text] {
     border: 2px solid #999999;
     border-radius: 5px;
     padding: 5px;
-    width: 40%;
+    width: ;
 }
-main {
-    color: var(--text-clr-main);
+.box-5 textarea {
+    border-radius: 5px;
 }
-
-footer {
+.box-5 button {
     background-color: var(--text-clr-second);
+    color: #333333;
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid #333333;
+}
+footer {
+    background-color: var(--bkg-clr-main);
+    padding: 15px;
+}
+footer p {
+    color:var(--text-clr-main);
+    font-size: 10px;
 }
