@@ -1,5 +1,5 @@
 :root {
-    --bkg-clr-main: #111111;
+    --bkg-clr-main: #000000;
     --text-clr-main: #ffffff;
     --text-clr-second: #FFFF00;
 }
@@ -11,6 +11,12 @@
 html, body {
     height: 100%;
     background-color: var(--bkg-clr-main);
+}
+@media screen and (min-width: 1000px) {
+    body {
+        background-image: url(../images/background1.jpg);
+        background-size: 100%;
+    }
 }
 
 
@@ -24,7 +30,8 @@ html, body {
     "box-1 box-1"
     "box-2 box-2"
     "box-3 box-3"
-    "box-4 box-4";
+    "box-4 box-4"
+    "box-5 box-5";
     grid-gap: 10px;
 }
 @media screen and (min-width: 800px) {
@@ -59,17 +66,32 @@ header a {
 .box-1 {
     grid-area: box-1;
     border: 1px solid #999999;
+    border-radius: 5px;
     padding: 10px;
+    text-align: center;
+}
+.box-1 h1 {
+    font-size: 36px;
 }
 .box-2 {
     grid-area: box-2;
     border: 1px solid #999999;
+    border-radius: 5px;
     padding: 10px;
 }
 .box-3 {
     grid-area: box-3;
     border: 1px solid #999999;
+    border-radius: 5px;
     padding: 10px;
+    line-height: 30px ;
+}
+.box-3 h2 {
+    color: var(--text-clr-second);
+}
+.box-3 li {
+    list-style: none;
+    text-indent: 5%;
 }
 @media screen and (max-width: 1000px){
     .mail {
@@ -80,14 +102,21 @@ header a {
 .box-4 {
     grid-area: box-4;
     border: 1px solid #999999;
+    border-radius: 5px;
     padding: 10px;
 }
 .box-5 {
     grid-area: box-5;
     border: 1px solid #999999;
+    border-radius: 5px;
     padding: 10px;
 }
-
+.box-5 input[type=text] {
+    border: 2px solid #999999;
+    border-radius: 5px;
+    padding: 5px;
+    width: 40%;
+}
 main {
     color: var(--text-clr-main);
 }
