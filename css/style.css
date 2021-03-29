@@ -1,0 +1,97 @@
+:root {
+    --bkg-clr-main: #111111;
+    --text-clr-main: #ffffff;
+    --text-clr-second: #FFFF00;
+}
+
+* {
+    font-family: 'Play', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    background-color: var(--bkg-clr-main);
+}
+
+
+.grid {
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "box-1 box-1"
+    "box-2 box-2"
+    "box-3 box-3"
+    "box-4 box-4";
+    grid-gap: 10px;
+}
+@media screen and (min-width: 800px) {
+    .grid {
+        margin: 0 auto;
+        max-width: 1000px;
+        padding: 15px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "box-1 box-1 box-1 box-1 box-1 box-1"
+        "box-2 box-2 box-3 box-3 box-3 box-3"
+        "box-4 box-4 box-5 box-5 box-5 box-5";
+        grid-gap: 10px;
+    }
+}
+
+header {
+    background-color: var(--bkg-clr-main);
+    padding: 15px;
+}
+header img {
+    width: 20%;
+}
+header a {
+    color: var(--text-clr-second);
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: 600;
+}
+
+.box-1 {
+    grid-area: box-1;
+    border: 1px solid #999999;
+    padding: 10px;
+}
+.box-2 {
+    grid-area: box-2;
+    border: 1px solid #999999;
+    padding: 10px;
+}
+.box-3 {
+    grid-area: box-3;
+    border: 1px solid #999999;
+    padding: 10px;
+}
+@media screen and (max-width: 1000px){
+    .mail {
+        font-size: 12px;
+    }
+}
+
+.box-4 {
+    grid-area: box-4;
+    border: 1px solid #999999;
+    padding: 10px;
+}
+.box-5 {
+    grid-area: box-5;
+    border: 1px solid #999999;
+    padding: 10px;
+}
+
+main {
+    color: var(--text-clr-main);
+}
+
+footer {
+    background-color: var(--text-clr-second);
+}
