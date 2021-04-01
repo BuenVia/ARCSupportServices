@@ -169,6 +169,7 @@ main button {
     background-color: var(--bkg-clr-nav);
     color: var(--text-clr-main);
     font-size: 16px;
+    cursor: pointer;
 }
 main button:hover {
     background-color: var(--bkg-clr-second);
@@ -187,7 +188,7 @@ main button:hover {
     height: 100%;
     overflow: auto;
     background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 .ebk-content {
     background-color: var(--bkg-clr-nav);
@@ -195,7 +196,7 @@ main button:hover {
     padding: 20px;
     border: 1px solid #888;
     border-radius: 10px;
-    width: 40%;
+    width: 90%;
     color: var(--text-clr-main);
     text-align: center;
 }
@@ -242,6 +243,18 @@ main button:hover {
     text-decoration: none;
     cursor: pointer;
 }
+@media screen and (min-width: 768px) {
+    .ebk-content {
+        background-color: var(--bkg-clr-nav);
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        border-radius: 10px;
+        width: 40%;
+        color: var(--text-clr-main);
+        text-align: center;
+    }
+}
 
 /*About Modal*/
 .abt {
@@ -254,7 +267,7 @@ main button:hover {
     height: 100%;
     overflow: auto;
     background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.7);
     
 }
 .abt-content {
@@ -295,7 +308,7 @@ main button:hover {
     cursor: pointer;
 }
 
-/*About Modal*/
+/*Contact Modal*/
 .con {
     display: none;
     position: fixed;
@@ -306,7 +319,7 @@ main button:hover {
     height: 100%;
     overflow: auto;
     background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 .con-content {
     background-color: var(--bkg-clr-nav);
@@ -314,7 +327,7 @@ main button:hover {
     padding: 20px;
     border: 1px solid #888;
     border-radius: 10px;
-    width: 60%;
+    width: 90%;
     text-align: center;
 }
 .con-content h2 {
@@ -349,7 +362,7 @@ main button:hover {
 .con-content button {
     border-radius: 4px;
     padding: 4px;
-    width: 40%;
+    width: 80px;
     background-color: var(--bkg-clr-second);
     color: var(--text-clr-third);
 }
@@ -369,4 +382,19 @@ main button:hover {
     color: var(--text-clr-main);
     text-decoration: none;
     cursor: pointer;
+}
+.insert {
+    color: var(--text-clr-second);
+    margin-top: 5%;
+}
+@media screen and (min-width: 500px){
+    .con-content {
+        background-color: var(--bkg-clr-nav);
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        border-radius: 10px;
+        width: 60%;
+        text-align: center;
+    }
 }

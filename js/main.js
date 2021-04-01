@@ -53,3 +53,14 @@ window.onclick = function(event) {
         conMod.style.display = "none";
     }
 }
+
+// Contact mail success message
+let success = document.URL.indexOf('?commentsubmit=success');
+if(success >= 0) {
+
+    let el = document.getElementById('success');
+    el.innerHTML = el.innerHTML+"<p class='insert'>Thank you for your message. We will respond within 72 hours.</p>"
+
+} else {
+    console.log('fail');
+}
