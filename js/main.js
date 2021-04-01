@@ -1,8 +1,8 @@
 function navHead() {
     let nav = document.getElementById("navbar");
-    if(nav.ClassName = "navigate") {
+    if(nav.className === "header") {
         nav.className += " responsive";
     } else {
-        nav.className = "navigate"
+        nav.className = "header";
     }
 }
