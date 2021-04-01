@@ -61,17 +61,19 @@ header i {
     right: 10px;
     top: 10px;
 }
-
 header a:not(:first-child) {
     display: none;
     color: var(--text-clr-second);
     text-decoration: none;
     margin-top: 7%;
 }
-.header a:hover {
+header a:hover {
     color: var(--text-clr-main);
 }
-
+header .responsive a {
+    display: block;
+    text-align: right;
+}
 .profile {
     display: none;
     text-align: left;
@@ -100,12 +102,9 @@ header a:not(:first-child) {
     font-size: 14px;
     margin-top: 10px;
 }
-header .responsive a {
-    display: block;
-    text-align: right;
-}
+
 @media screen and (min-width: 770px) {
-    header {
+    .header {
         display: block;
         background-color: var(--bkg-clr-nav);
         margin-top: 0 auto;
@@ -124,6 +123,9 @@ header .responsive a {
         margin-top: 7%;
         line-height: 35px;
         font-size: 20px;
+    }
+    .header a:not(:first-child):hover {
+        color: var(--text-clr-main);
     }
     .profile {
         display: grid;
@@ -146,6 +148,18 @@ main h1 {
 }
 main p {
     color: var(--text-clr-main);
+}
+.social {
+    margin-top: 10%;
+}
+.social a {
+    padding: 0 15px 0 0;
+    color: var(--text-clr-main);
+    font-size: 24px;
+}
+.social a:hover {
+    color: var(--text-clr-second);
+    font-size: 32px;
 }
 main button {
     margin-top: 15px;
@@ -211,6 +225,12 @@ main button:hover {
     background-color: var(--bkg-clr-second);
     color: var(--text-clr-third);
 }
+.ebk-content button:hover {
+    background-color: var(--bkg-clr-main);
+    color: var(--text-clr-second);
+    border: 1px solid var(--bkg-clr-second);
+    cursor: pointer;
+}
 .ebkCls {
     color: var(--text-clr-second);
     float: right;
@@ -235,13 +255,33 @@ main button:hover {
     overflow: auto;
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4);
+    
 }
 .abt-content {
-    background-color: #fefefe;
-    margin: 15% auto;
+    background-color: var(--bkg-clr-nav);
+    margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
+    border-radius: 10px;
     width: 80%;
+    text-align: justify;
+    text-justify: inter-word;
+}
+.abt-content h2 {
+    color: var(--text-clr-second);
+    font-size: 24px;
+}
+.abt-content p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--text-clr-main);
+}
+
+.abt-content ul {
+    color: var(--text-clr-main);
+    margin-top: 20px;
+    font-size: 14px;
+    padding-left: 15px;
 }
 .abtCls {
     color: #aaa;
@@ -270,7 +310,7 @@ main button:hover {
 }
 .con-content {
     background-color: var(--bkg-clr-nav);
-    margin: 15% auto;
+    margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
     border-radius: 10px;
@@ -280,10 +320,11 @@ main button:hover {
 .con-content h2 {
     color: var(--text-clr-second);
     font-size: 36px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .con-content p {
     margin-top: 20px;
+    margin-bottom: 10px;
     font-size: 14px;
     color: var(--text-clr-main);
 }
@@ -311,6 +352,12 @@ main button:hover {
     width: 40%;
     background-color: var(--bkg-clr-second);
     color: var(--text-clr-third);
+}
+.con-content button:hover {
+    background-color: var(--bkg-clr-main);
+    color: var(--text-clr-second);
+    border: 1px solid var(--bkg-clr-second);
+    cursor: pointer;
 }
 .conCls {
     color: var(--text-clr-second);
