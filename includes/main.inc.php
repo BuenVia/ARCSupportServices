@@ -15,7 +15,7 @@ if (isset($_POST['comment-submit'])) {
           error_reporting( E_ALL );
   
           $from = "webmaster@arcsupportservices.co.uk";
-          $to = "matt@buenvia.com";
+          $to = "james@arcsupportservices.co.uk";
           $subject = "ENQUIRY: ARC Support Services";
           $headers = "From:" . $from;
   
