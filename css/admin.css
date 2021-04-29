@@ -3,6 +3,9 @@
 }
 
 body {
+    height: 100vh;
     font-family: 'Play', sans-serif;
     box-sizing: border-box;
+    background: linear-gradient(#555, #111);
+    color: #fff;
 }

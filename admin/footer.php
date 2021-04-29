@@ -1,3 +1,3 @@
-<p>Footer</p>
+<p>Powered by BuenVia</p>
 </body>
 </html>
