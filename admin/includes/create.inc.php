@@ -71,41 +71,43 @@ if (isset($_POST['create-bodyshop-submit'])) {
     $street = $_POST['street'];
     $town = $_POST['town'];
     $county = $_POST['county'];
-    $pcode = $_POST['pcode'];
+    $postcode = $_POST['postcode'];
     $phone = $_POST['phone'];
 
-    if (empty($bodyshop)) {
-        header("Location: ../create.php?error=emptyfieldsBodyshop");
+    if (empty($bodyshop) || empty($street) || empty($town) || empty($county) || empty($postcode) || empty($phone)) {
+        header("Location: ../create/createbs.php?error=emptyfields&bodyshop=".$user);
         exit();
-    } else {
+    }
 
-        $sql = "SELECT name FROM bodyshop WHERE name=?";
+    else {
+
+        $sql = "SELECT bodyshop FROM customer WHERE bodyshop=?";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("Location: ../create.php?error=sqlerror");
+            header("Location: ../create/createbs.php?error=sqlerror");
             exit();
         }
         else {
-            mysqli_stmt_bind_param($stmt, "ssssss", $bodyshop, $street, $town, $county, $pcode, $phone);
+            mysqli_stmt_bind_param($stmt, "s", $bodyshop);
             mysqli_stmt_execute($stmt);
             mysqli_stmt_store_result($stmt);
             $resultcheck = mysqli_stmt_num_rows($stmt);
             if ($resultcheck > 0) {
-                header("Location: ../create.php?error=usertaken");
+                header("Location: ../create/createbs.php?error=usertaken");
                 exit();
             }
             else {
 
-                $sql = "INSERT INTO bodyshop (name, street, town, county, postcode, phone) VALUES (?, ?, ?, ?, ?, ?)";
+                $sql = "INSERT INTO customer (bodyshop, street, town, county, postcode, phone) VALUES (?, ?, ?, ?, ?, ?)";
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
-                    header("Location: ../create.php?error=sqlerror1");
+                    header("Location: ../create/createbs.php?error=sqlerror1");
                     exit();
         }
             else {
-                mysqli_stmt_bind_param($stmt, "ssssss", $bodyshop, $street, $town, $county, $pcode, $phone);
+                mysqli_stmt_bind_param($stmt, "ssssss", $bodyshop, $street, $town, $county, $postcode, $phone);
                 mysqli_stmt_execute($stmt);
-                header("Location: ../admin.php?signup=success");
+                header("Location: ../admin.php?signup=success&bs=".$bodyshop);
                 exit();
             }
         }
