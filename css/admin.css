@@ -1,3 +1,7 @@
+:root {
+    --txt-clr-main: #fff;
+}
+
 * {
 
 }
@@ -7,5 +11,19 @@ body {
     font-family: 'Play', sans-serif;
     box-sizing: border-box;
     background: linear-gradient(#555, #111);
+}
+
+main {
+    color: #fff;
+}
+
+.box {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid var(--txt-clr-main);
+    border-radius: 10px;
+}
+
+footer {
     color: #fff;
 }

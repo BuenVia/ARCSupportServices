@@ -7,7 +7,7 @@
 ?>
 
 <!--MAIN-->
-
+<main>
 
 <div class="row">
 
@@ -38,7 +38,7 @@
                 <label for="psw" style="color:#FFFF00">Password</label><br>
                 <input type="password" name="psw" placeholder="..." required>
                     <br><br>
-                <button type="submit" name="login-submit" class="btn4 toplevel">SUBMIT</button>
+                <button type="submit" name="loginad-submit" class="btn4 toplevel">SUBMIT</button>
 
                 </div>
             </div>
@@ -51,6 +51,8 @@
 </div>
 
 </div>
+    
+</main>
 
 
 <?php

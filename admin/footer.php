@@ -1,3 +1,5 @@
-<p>Powered by BuenVia</p>
-</body>
+        <footer>
+            <p>Powered by BuenVia</p>
+        </footer>
+    </body>
 </html>

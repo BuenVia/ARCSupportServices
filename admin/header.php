@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,15 +23,15 @@
 
     <div class="row">
         <div class="column-sm" style="text-align:centre">
-            <a href="/admin/index.php"><img src="../images/new_arc_logo.png" style="height:80px"></a>
+            <a href="index.php"><img src="../images/new_arc_logo.png" style="height:80px"></a>
         </div>
 
         <div class="column-sm" style="text-align:right">
         <?php
-            if (isset($_SESSION['user'])) {
+            if (isset($_SESSION['id'])) {
 
-                echo '<p style="color:white">You are logged in as <a style="color:white"><b><u>'.$_SESSION['user'].'</u></b></a></p>
-                        <a href="/admin/includes/logoutad.inc.php"><button class="btn7 lnk"><b><u>Logout</b></u></button></a></p>';
+                echo '<p style="color:white">You are logged in as <a style="color:white"><b><u>'.$_SESSION['id'].'</u></b></a></p>
+                        <a href="includes/logoutad.inc.php"><button class="btn7 lnk"><b><u>Logout</b></u></button></a></p>';
             }
             else {
                 echo '<p style="color:white"><b>You are <u>LOGGED OUT</u></b></p>';

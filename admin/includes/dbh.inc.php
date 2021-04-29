@@ -1,9 +1,9 @@
 <?php
 
-$servername = "mysql1.clarahost.co.uk";
-$dBUsername = "membersdb";
-$dBPassword = "admiral";
-$dBName = "membersdb";
+$servername = "localhost";
+$dBUsername = "root";
+$dBPassword = "";
+$dBName = "onlinevda";
 
 $conn = mysqli_connect($servername, $dBUsername, $dBPassword, $dBName);
 

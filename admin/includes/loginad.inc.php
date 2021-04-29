@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST['login-submit'])) {
+if (isset($_POST['loginad-submit'])) {
 
         require 'dbh.inc.php';
 
@@ -12,7 +12,7 @@ if (isset($_POST['login-submit'])) {
             exit();
         }
         else {
-            $sql = "SELECT * FROM admin WHERE user=?;";
+            $sql = "SELECT * FROM admin WHERE adminUser=?;";
             $stmt = mysqli_stmt_init($conn);
             if (!mysqli_stmt_prepare($stmt, $sql)) {
                 header("Location: ../index.php?error=sqlerror");
@@ -30,9 +30,9 @@ if (isset($_POST['login-submit'])) {
                     }
                     else if ($pswcheck == true) {
                         session_start();
-                        $_SESSION['user'] = $row{'user'};
+                        $_SESSION['id'] = $row['adminUser'];
 
-                        header("Location: ../admin.php");
+                        header("Location: ../admin.php?".$_SESSION['id']);
                         exit();
 
                     }
