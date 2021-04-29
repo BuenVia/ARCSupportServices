@@ -1,5 +1,6 @@
 <?php
 
+// CREATE ADMIN
 if (isset($_POST['create-admin-submit'])) {
 
     require 'dbh.inc.php';
@@ -8,7 +9,7 @@ if (isset($_POST['create-admin-submit'])) {
     $psw = $_POST['psw'];
     $rpsw = $_POST['rpsw'];
 
-    if (empty($user)) {
+    if (empty($user) || empty($psw) || empty($rpsw)) {
         header("Location: ../create.php?error=emptyfieldsAdmin");
         exit();
     }
@@ -63,6 +64,7 @@ if (isset($_POST['create-admin-submit'])) {
 
 } 
 
+// CREAT BODYSHOP
 if (isset($_POST['create-bodyshop-submit'])) {
 
     require 'dbh.inc.php';
@@ -120,7 +122,8 @@ if (isset($_POST['create-bodyshop-submit'])) {
 
 } 
 
-if (isset($_POST['create-bodyshop-submit'])) {
+// CREATE USER
+if (isset($_POST['create-user-submit'])) {
 
     require 'dbh.inc.php';
 
@@ -129,10 +132,8 @@ if (isset($_POST['create-bodyshop-submit'])) {
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $bodyshop = $_POST['bodyshop'];
-    $idBodyshop = $_POST['idbs'];
-    $pwd = $_POST['pwd'];
 
-    if (empty($fname) || empty($sname) || empty($email) || empty($phone) || empty($bodyshop) || empty($idBodyshop) || empty($pwd)) {
+    if (empty($fname) || empty($sname) || empty($email) || empty($phone) || empty($bodyshop) || empty($idBodyshop)) {
         header("Location: ../create/createus.php?error=emptyfields&createus1");
         exit();
     }

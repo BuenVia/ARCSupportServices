@@ -7,14 +7,17 @@
     <div class="box">
         <form action="includes/create.inc.php" method="POST">
         <h1>Create User</h1>
-            <label for="">Email</label><br>
-            <input type="text" name="user" id="" placeholder="..."/><br>
-
             <label for="">First Name</label><br>
-            <input type="text" name="psw" id="" placeholder="..."/><br>
+            <input type="text" name="fname" id="" placeholder="..."/><br>
 
             <label for="">Last Name</label><br>
-            <input type="text" name="rpsw" id="" placeholder="..."/><br>
+            <input type="text" name="sname" id="" placeholder="..."/><br>
+
+            <label for="">Email</label><br>
+            <input type="text" name="email" id="" placeholder="..."/><br>
+
+            <label for="">Phone</label><br>
+            <input type="text" name="phone" id="" placeholder="..."/><br>
 
             <label for="">Bodyshop</label><br>
             <select type="text" name="bodyshop">
