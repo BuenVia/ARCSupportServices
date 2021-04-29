@@ -18,27 +18,28 @@
 
             <label for="">Bodyshop</label><br>
             <select type="text" name="bodyshop">
-                                  <option>Select a bodyshop...</option>
+                <option value="" readonly>Select</option>
 
-                                    <?php
+                    <?php
 
-                                        require '../includes/dbh.inc.php';
+                        require 'includes/dbh.inc.php';
 
-                                        $sql = "SELECT * FROM customer";
-                                        $result = mysqli_query($conn, $sql);
-                                        $resultCheck = mysqli_num_rows($result);
+                        $sql = "SELECT * FROM bodyshop";
+                        $result = mysqli_query($conn, $sql);
+                        $resultCheck = mysqli_num_rows($result);
 
-                                            if ($resultCheck > 0) {
-                                            while ($row = mysqli_fetch_assoc($result)) {
+                            if ($resultCheck > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
 
-                                                $bodyshop = $row['bodyshop'];
-                                                $id = $row['bodyshopId'];
+                                $bodyshop = $row['name'];
+                                $id = $row['id'];
 
-                                              echo '<option value='.$id.'>'.$bodyshop.'_'.$id.'</option>';
+                                echo '<option value='.$id.'>'.$bodyshop.' '.$id.'</option>';
 
-                                            }
-                                        }
-                                        ?></select>
+                            }
+                        }
+                        ?>
+                        </select><br>
 
             <input type="submit" name="create-user-submit">
         </form>
