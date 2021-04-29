@@ -9,7 +9,7 @@ if (isset($_POST['create-admin-submit'])) {
     $rpsw = $_POST['rpsw'];
 
     if (empty($user)) {
-        header("Location: ../create.php?error=emptyfields");
+        header("Location: ../create.php?error=emptyfieldsAdmin");
         exit();
     }
     else if (!filter_var($user, FILTER_VALIDATE_EMAIL)) {
@@ -75,13 +75,13 @@ if (isset($_POST['create-bodyshop-submit'])) {
     $phone = $_POST['phone'];
 
     if (empty($bodyshop) || empty($street) || empty($town) || empty($county) || empty($postcode) || empty($phone)) {
-        header("Location: ../create/createbs.php?error=emptyfields&bodyshop=".$user);
+        header("Location: ../create.php?error=emptyfieldsBodyshop");
         exit();
     }
 
     else {
 
-        $sql = "SELECT bodyshop FROM customer WHERE bodyshop=?";
+        $sql = "SELECT name FROM bodyshop WHERE name=?";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
             header("Location: ../create/createbs.php?error=sqlerror");
@@ -98,7 +98,7 @@ if (isset($_POST['create-bodyshop-submit'])) {
             }
             else {
 
-                $sql = "INSERT INTO customer (bodyshop, street, town, county, postcode, phone) VALUES (?, ?, ?, ?, ?, ?)";
+                $sql = "INSERT INTO bodyshop (name, street, town, county, postcode, phone) VALUES (?, ?, ?, ?, ?, ?)";
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
                     header("Location: ../create/createbs.php?error=sqlerror1");

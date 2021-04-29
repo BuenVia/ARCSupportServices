@@ -41,7 +41,7 @@
             <input type="text" name="county" id=""/><br>
 
             <label for="">Postcode</label><br>
-            <input type="text" name="pcode" id="" /><br>
+            <input type="text" name="postcode" id="" /><br>
 
             <label for="">Phone</label><br>
             <input type="text" name="phone" id=""/><br>
