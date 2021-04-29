@@ -17,9 +17,28 @@
             <input type="text" name="rpsw" id="" placeholder="..."/><br>
 
             <label for="">Bodyshop</label><br>
-            <select name="bodyshop" id="">
-                <option>Select Bodyshop</option>
-            </select><br>
+            <select type="text" name="bodyshop">
+                                  <option>Select a bodyshop...</option>
+
+                                    <?php
+
+                                        require '../includes/dbh.inc.php';
+
+                                        $sql = "SELECT * FROM customer";
+                                        $result = mysqli_query($conn, $sql);
+                                        $resultCheck = mysqli_num_rows($result);
+
+                                            if ($resultCheck > 0) {
+                                            while ($row = mysqli_fetch_assoc($result)) {
+
+                                                $bodyshop = $row['bodyshop'];
+                                                $id = $row['bodyshopId'];
+
+                                              echo '<option value='.$id.'>'.$bodyshop.'_'.$id.'</option>';
+
+                                            }
+                                        }
+                                        ?></select>
 
             <input type="submit" name="create-user-submit">
         </form>
