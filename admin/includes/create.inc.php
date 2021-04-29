@@ -120,6 +120,66 @@ if (isset($_POST['create-bodyshop-submit'])) {
 
 } 
 
+if (isset($_POST['create-bodyshop-submit'])) {
+
+    require 'dbh.inc.php';
+
+    $fname = $_POST['fname'];
+    $sname = $_POST['sname'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $bodyshop = $_POST['bodyshop'];
+    $idBodyshop = $_POST['idbs'];
+    $pwd = $_POST['pwd'];
+
+    if (empty($fname) || empty($sname) || empty($email) || empty($phone) || empty($bodyshop) || empty($idBodyshop) || empty($pwd)) {
+        header("Location: ../create/createus.php?error=emptyfields&createus1");
+        exit();
+    }
+
+    else {
+
+        $sql = "SELECT email FROM user WHERE email=?";
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            header("Location: ../create/createus.php?error=sqlerror");
+            exit();
+        }
+        else {
+            mysqli_stmt_bind_param($stmt, "s", $email);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_store_result($stmt);
+            $resultcheck = mysqli_stmt_num_rows($stmt);
+            if ($resultcheck > 0) {
+                header("Location: ../create/createus.php?error=emailtaken");
+                exit();
+            }
+            else {
+
+                $sql = "INSERT INTO user (fname, sname, email, phone, bodyshop, bodyshopId, pwd) VALUES (?, ?, ?, ?, ?, ?, ?)";
+                $stmt = mysqli_stmt_init($conn);
+                if (!mysqli_stmt_prepare($stmt, $sql)) {
+                    header("Location: ../create/createus.php?error=sqlerror1");
+                    exit();
+        }
+            else {
+                $hashedpsw = password_hash($pwd, PASSWORD_DEFAULT);
+
+                mysqli_stmt_bind_param($stmt, "sssssss", $fname, $sname, $email, $phone, $bodyshop, $idBodyshop, $hashedpsw);
+                mysqli_stmt_execute($stmt);
+                header("Location: ../create/createus.php?signup=success");
+                exit();
+            }
+        }
+
+    }
+
+    }
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+
+}
+
 else {
     header("Location: ../create.php?error=unknown");
 }
