@@ -5,7 +5,7 @@
 <main>
 
     <div class="box">
-        <form action="includes/create.inc.php" method="POST">
+        <form action="create-user.php" method="POST">
         <h1>Create User</h1>
             <label for="">First Name</label><br>
             <input type="text" name="fname" id="" placeholder="..."/><br>

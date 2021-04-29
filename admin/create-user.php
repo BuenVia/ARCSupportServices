@@ -1,6 +1,5 @@
 <?php
-    require'../adminheader.php';
-    require'../includes/auth_check.php';
+    require'header.php';
 ?>
 
 <main>
@@ -18,37 +17,36 @@
 
 
 
-                            <form action="../includes/create.inc.php" method="post">
+                            <form action="includes/create.inc.php" method="post">
 
                               <?php
 
-                                if (isset($_POST['createus-submit'])) {
+                                if (isset($_POST['create-user-submit'])) {
 
-                                  require'../includes/dbh.inc.php';
+                                  require'includes/dbh.inc.php';
 
                                   $fname = $_POST['fname'];
                                   $sname = $_POST['sname'];
                                   $email = $_POST['email'];
                                   $phone = $_POST['phone'];
                                   $bodyshop = $_POST['bodyshop'];
-                                  $pwd = $_POST['pwd'];
 
-                                  if(empty($fname) || empty($sname) || empty($email) || empty($phone) || empty($bodyshop) || empty($pwd)){
-                                    header("Location: ../create/createus.php?error=emptyfields");
+                                  if(empty($fname) || empty($sname) || empty($email) || empty($phone) || empty($bodyshop)){
+                                    header("Location: ../create.php?error=emptyfields");
                                     exit();
                                   }
 
                                   else{
 
-                                    $sql = "SELECT * FROM customer WHERE bodyshopId=".$bodyshop.";";
+                                    $sql = "SELECT * FROM bodyshop WHERE id=".$bodyshop.";";
                                     $result = mysqli_query($conn, $sql);
                                     $resultCheck = mysqli_num_rows($result);
 
                                         if ($resultCheck > 0) {
                                         while ($row = mysqli_fetch_assoc($result)) {
 
-                                            $bodyshop = $row['bodyshop'];
-                                            $id = $row['bodyshopId'];
+                                            $bodyshop = $row['name'];
+                                            $id = $row['id'];
 
 
                                   echo '
@@ -69,12 +67,9 @@
                                     <br>
                                 <label style="color:#00dddd">Bodyshop ID</label><br>
                                 <a><input type="text" name="idbs" value="'.$id.'"readonly/></a>
-                                    <br>
-                                <label style="color:#00dddd">Password</label><br>
-                                <a><input type="text" name="pwd" value="'.$pwd.'"readonly/></a>
 
                                         <br><br>
-                                <button class="btn5 vda" type="submit" name="createus1-submit" style="width:25%">Register</button>';
+                                <button class="btn5 vda" type="submit" name="create-user1-submit" style="width:25%">Register</button>';
                               }
                             }
                         }
