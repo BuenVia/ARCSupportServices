@@ -8,22 +8,23 @@
             <div class="col-sm-2 cont">
                 <div class="session">
 
+
+
+                <ul>
+
                 <?php
                     if (isset($_SESSION['id'])) {
 
-                        echo '<p style="color:white">You are logged in as <a style="color:white"><b><u>'.$_SESSION['id'].' '.$_SESSION['fname'].' '.$_SESSION['sname'].' '.$_SESSION['bodyshop'].' '.$_SESSION['bsid'].'</u></b></a></p>
-                               <p><a href="includes/logoutus.inc.php"><button class="btn1"><b><u>Logout</b></u></button></a></p>';
+                        echo '<li><b style="color: #ffff00">User ID:</b> '.$_SESSION['userId'].'</li>
+                              <li><b style="color: #ffff00">User Name:</b> '.$_SESSION['id'].'</li>
+                              <li><b style="color: #ffff00">Bodyshop:</b> '.$_SESSION['bodyshop'].'</li>
+                              <li><b style="color: #ffff00">Bodyshop ID:</b> '.$_SESSION['bsid'].'</li>';
                     }
                     else {
                         echo '<p style="color:white"><b>You are <u>LOGGED OUT</u></b></p>';
                     }
                 ?>
 
-                <ul>
-                    <li>Bodyshop</li>
-                    <li>Bodyshop ID:</li>
-                    <li>User</li>
-                    <li>User ID</li>
                 </ul>
                 </div>
             </div>

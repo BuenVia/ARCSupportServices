@@ -31,6 +31,7 @@ if (isset($_POST['user-login-submit'])) {
                     else if ($pswcheck == true) {
                         session_start();
                         $_SESSION['id'] = $row['email'];
+                        $_SESSION['userId'] = $row['id'];
                         $_SESSION['fname'] = $row['fname'];
                         $_SESSION['sname'] = $row['sname'];
                         $_SESSION['bodyshop'] = $row['bodyshop'];
