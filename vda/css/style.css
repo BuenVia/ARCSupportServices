@@ -1,0 +1,104 @@
+:root {
+    --bkg-clr-main: #111;
+    --bkg-clr-one: #999;
+    --bkg-clr-two: #ffff00;
+    --txt-clr-main: #fff;
+    --txt-clr-one: #ffff00;
+    --txt-clr-two: #111;
+}
+*{
+    box-sizing: border-box;
+    font-family: 'Play', sans-serif;
+}
+body {
+    height: 100vh;
+    overflow: scroll;
+    background-image: url(../images/background4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center right;
+    background-attachment: fixed;
+    background-color: var(--bkg-clr-main);
+}
+/*Header*/
+header {
+    background-color: var(--bkg-clr-nav);
+    padding: 10px;
+    min-height: 35px;
+}
+header i {
+    color: var(--txt-clr-one);
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+header a:not(:first-child) {
+    display: none;
+    color: var(--txt-clr-one);
+    text-decoration: none;
+    margin-top: 20px;
+}
+header a:hover {
+    color: var(--text-clr-main);
+}
+header .responsive a {
+    display: block;
+    text-align: right;
+}
+ img {
+    align-items: 0 auto;
+    width: 150px;
+    margin: 10px;
+}
+
+
+/*LOGIN FORM*/
+label {
+    color: var(--txt-clr-one);
+}
+.btn1 {
+    background-color: var(--bkg-clr-two);
+    margin: 10px 0 10px 0;
+    border-radius: 10px;
+    height: 40px;
+    border: none;
+    outline: none;
+}
+.btn1:hover {
+    background-color: var(--bkg-clr-one);
+    color: var(--txt-clr-one);
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.group {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid var(--bkg-clr-one);
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 400px;
+}
+.group h1 {
+    color: var(--txt-clr-one);
+}
+.group label {
+    color: var(--txt-clr-main);
+}
+.vda-text {
+    resize: none;
+    border-radius: 10px;
+    width: 100%;
+}
+
+/*FRONT PAGE*/
+.session li {
+    list-style: none;
+    color: var(--txt-clr-main);
+}
+
+/* PHOTOS */
+ input[type="file"] {
+     color: var(--txt-clr-one);
+ }
