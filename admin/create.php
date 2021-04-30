@@ -44,6 +44,9 @@
                         ?>
                         </select><br>
 
+            <label for="">Password</label><br>
+            <input type="password" name="psw" id="" placeholder="..."/><br>
+
             <input type="submit" name="create-user-submit">
         </form>
     </div>

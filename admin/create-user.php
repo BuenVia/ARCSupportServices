@@ -30,6 +30,7 @@
                                   $email = $_POST['email'];
                                   $phone = $_POST['phone'];
                                   $bodyshop = $_POST['bodyshop'];
+                                  $psw = $_POST['psw'];
 
                                   if(empty($fname) || empty($sname) || empty($email) || empty($phone) || empty($bodyshop)){
                                     header("Location: ../create.php?error=emptyfields");
@@ -67,6 +68,9 @@
                                     <br>
                                 <label style="color:#00dddd">Bodyshop ID</label><br>
                                 <a><input type="text" name="idbs" value="'.$id.'"readonly/></a>
+                                    <br>
+                                <label style="color:#00dddd">Password</label><br>
+                                <a><input type="password" name="psw" value="'.$psw.'"readonly/></a>
 
                                         <br><br>
                                 <button class="btn5 vda" type="submit" name="create-user1-submit" style="width:25%">Register</button>';

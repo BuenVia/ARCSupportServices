@@ -133,8 +133,9 @@ if (isset($_POST['create-user1-submit'])) {
     $phone = $_POST['phone'];
     $bodyshop = $_POST['bodyshop'];
     $idBodyshop = $_POST['idbs'];
+    $psw = $_POST['psw'];
 
-    if (empty($fname) || empty($sname) || empty($email) || empty($phone) || empty($bodyshop) || empty($idBodyshop)) {
+    if (empty($fname) || empty($sname) || empty($email) || empty($phone) || empty($bodyshop) || empty($idBodyshop) || empty($psw)) {
         header("Location: ../create.php?error=emptyfields");
         exit();
     }
@@ -158,14 +159,16 @@ if (isset($_POST['create-user1-submit'])) {
             }
             else {
 
-                $sql = "INSERT INTO user (fname, sname, email, phone, bodyshop, bsid) VALUES (?, ?, ?, ?, ?, ?)";
+                $sql = "INSERT INTO user (fname, sname, email, phone, bodyshop, bsid, psw) VALUES (?, ?, ?, ?, ?, ?, ?)";
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
                     header("Location: ../create.php?error=sqlerror1");
                     exit();
         }
             else {
-                mysqli_stmt_bind_param($stmt, "ssssss", $fname, $sname, $email, $phone, $bodyshop, $idBodyshop);
+                $hashedpsw = password_hash($psw, PASSWORD_DEFAULT);
+
+                mysqli_stmt_bind_param($stmt, "sssssss", $fname, $sname, $email, $phone, $bodyshop, $idBodyshop, $hashedpsw);
                 mysqli_stmt_execute($stmt);
                 header("Location: ../create.php?signup=success");
                 exit();
