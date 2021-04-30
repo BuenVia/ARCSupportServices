@@ -13,16 +13,21 @@
 body {
     height: 100vh;
     overflow: scroll;
-    background-image: url(../images/background4.jpg);
+    /* background-image: url(../images/background4.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center right;
     background-attachment: fixed;
-    background-color: var(--bkg-clr-main);
+    background-color: var(--bkg-clr-main); */
 }
+/* TEMPORARY BACKGROUND COLOUR ------ TO BE DELETED AND THE ABOVE CODE 'UNCOMMENTED' */
+.row {
+    background-color: blue;
+}
+
 /*Header*/
 header {
-    background-color: var(--bkg-clr-nav);
+    background-color: var(--bkg-clr-one);
     padding: 10px;
     min-height: 35px;
 }
