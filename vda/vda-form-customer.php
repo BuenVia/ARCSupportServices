@@ -9,26 +9,11 @@
         
         <div class="col-sm-8">
 
-            <form action="includes/vda.inc.php" method="post" class="vdaform">
+            <form action="vda-form-claim.php" method="post" class="vdaform">
                
             <div class="group">
                 <h1>Customer Details</h1>
-                <div class="vda-group">
-                    <label>Customer Suffix.</label>
-                    <select class="form-select form-select-sm" name="suffix" id="">
-                        <option value="" disabled selected>Select</option>
-                        <option value="mr">Mr</option>
-                        <option value="mrs">Mrs</option>
-                    </select>
-                </div>
-                <div class="vda-group">
-                    <label>Customer Surname.</label>
-                    <input class="form-control" type="text" name="sname" id="" placeholder="Surname...">
-                </div>
-                <div class="vda-group">
-                    <label>Customer Firstname.</label>
-                    <input class="form-control" type="text" name="fname" id="" placeholder="First Name...">
-                </div>
+
 
                 <h1>Address Details</h1>
                 <div class="vda-group">

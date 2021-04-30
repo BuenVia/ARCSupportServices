@@ -43,6 +43,7 @@
                             <th style="font-size: 15px; width:250px">Policy Number:</th>
                             <th style="font-size: 15px; width:250px">Last Name:</th>
                             <th style="font-size: 15px; width:250px">First Name:</th>
+                            <th style="font-size: 15px; width:250px">Completed:</th>
                         </tr>
 
                         <tr>
@@ -59,11 +60,12 @@
 
                                     echo
                                     '<tr>
-                                    <td><a href="bsprofile.php?bsid='.$bsid.'"><button class="btn8 bsho">'.$row['id'].'</button></a></td>
+                                    <td><a href="vda-form-customer.php?bsid='.$bsid.'"><button class="btn8 bsho">'.$row['id'].'</button></a></td>
                                     <td>'.$row['claimNo'].'</td>
                                     <td>'.$row['policyId'].'</td>
                                     <td>'.$row['surname'].'</td>
-                                    <td>'.$row['fname'].'</td></tr>';
+                                    <td>'.$row['fname'].'</td>
+                                    <td>0%</td></tr>';
                                     }
                                 }
                             ?>

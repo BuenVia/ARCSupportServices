@@ -24,11 +24,11 @@ session_start();
 
     <!--Header/ Navbar-->
     <header>
-    <div class="column-sm" style="text-align:centre">
-            <a href="index.php"><img src="../images/new_arc_logo.png" style="height:80px"></a>
+    <div class="col-sm" style="text-align:centre">
+            <a href="login.php"><img src="../images/new_arc_logo.png" style="height:80px"></a>
         </div>
 
-        <div class="column-sm" style="text-align:right">
+        <div class="col-sm" style="text-align:right">
         <?php
             if (isset($_SESSION['id'])) {
 
