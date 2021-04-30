@@ -15,6 +15,17 @@
                 <div class="group">
                     <h1>Claim Details</h1>
 
+                    
+                <?php
+                    if (isset($_SESSION['id'])) {
+
+                        echo '<input type="text" name="userId" value="'.$_SESSION['userId'].'" readonly>
+                              <input type="text" name="userEmail" value="'.$_SESSION['id'].'" readonly>
+                              <input type="text" name="bodyshop" value="'.$_SESSION['bodyshop'].'" readonly>
+                              <input type="text" name="bsid" value="'.$_SESSION['bsid'].'" readonly>';
+                    }
+                ?>
+
                     <div class="vda-group">
                         <label>Customer Last Name</label>
                         <input class="form-control" type="text" name="sname" id="" placeholder="Customer Last Name...">

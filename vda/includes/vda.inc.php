@@ -7,6 +7,11 @@ if (isset($_POST['create-submit'])) {
 
     $date = date("Y-m-d H:i:s");
 
+    $userId = $_POST['userId'];
+    $userEmail = $_POST['userEmail'];
+    $bodyshop = $_POST['bodyshop'];
+    $bsid = $_POST['bsid'];
+
     $sname = $_POST['sname'];
     $fname = $_POST['fname'];
     $claim = $_POST['claim'];
@@ -20,20 +25,20 @@ if (isset($_POST['create-submit'])) {
         $sql = "SELECT date FROM vdaform WHERE date=?";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("Location: ../vda-form-create.html?error=sqlerror");
+            header("Location: ../vda-form-create.php?error=sqlerror");
             exit();
         }
         else {
-                $sql = "INSERT INTO vdaform (date, surname, fname, claimNo, policyId) VALUES (?, ?, ?, ?, ?)";
+                $sql = "INSERT INTO vdaform (date, userId, userEmail, bodyshop, bsid, surname, fname, claimNo, policyId) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
-                    header("Location: ../vda-form-create.html?error=sqlerror1");
+                    header("Location: ../vda-form-create.php?error=sqlerror1");
                     exit();
                 }
                 else {
-                    mysqli_stmt_bind_param($stmt, "sssss", $date, $sname, $fname, $claim, $policy);
+                    mysqli_stmt_bind_param($stmt, "sssssssss", $date, $userId, $userEmail, $bodyshop, $bsid, $sname, $fname, $claim, $policy);
                     mysqli_stmt_execute($stmt);
-                    header("Location: ../login.php?");
+                    header("Location: ../login.php?success=true");
                     exit();
                     }
             }
