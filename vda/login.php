@@ -36,7 +36,7 @@
                 
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4">
-                    <table style="background: black">
+                    <table style="background: black; color: #fff;">
                         <tr style="background:#999">
                             <th style="font-size: 15px; width:50px">ID:</th>
                             <th style="font-size: 15px; width:250px">Claim Number:</th>

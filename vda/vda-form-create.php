@@ -19,7 +19,8 @@
                 <?php
                     if (isset($_SESSION['id'])) {
 
-                        echo '<input type="text" name="userId" value="'.$_SESSION['userId'].'" readonly>
+                        echo '<h2 style="color: red">TO BE HIDDEN</h2>
+                              <input type="text" name="userId" value="'.$_SESSION['userId'].'" readonly>
                               <input type="text" name="userEmail" value="'.$_SESSION['id'].'" readonly>
                               <input type="text" name="bodyshop" value="'.$_SESSION['bodyshop'].'" readonly>
                               <input type="text" name="bsid" value="'.$_SESSION['bsid'].'" readonly>';
