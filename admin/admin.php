@@ -17,7 +17,7 @@
 
             <a href="list-bodyshop.php"><button>View Bodyshops</button></a><br>
             <a href="list-users.php"><button>View Users</button></a><br>
-            <a href="javascript:void(0)"><button>View Forms</button></a><br>
+            <a href="list-forms.php"><button>View Forms</button></a><br>
 
         </div>
         
