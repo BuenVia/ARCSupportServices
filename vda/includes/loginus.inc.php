@@ -31,6 +31,10 @@ if (isset($_POST['user-login-submit'])) {
                     else if ($pswcheck == true) {
                         session_start();
                         $_SESSION['id'] = $row['email'];
+                        $_SESSION['fname'] = $row['fname'];
+                        $_SESSION['sname'] = $row['sname'];
+                        $_SESSION['bodyshop'] = $row['bodyshop'];
+                        $_SESSION['bsid'] = $row['bsid'];
 
                         header("Location: ../login.php?".$_SESSION['id']);
                         exit();
