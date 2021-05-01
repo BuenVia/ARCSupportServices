@@ -13,22 +13,22 @@
             <form action="vda-photo.php" method="post" class="vdaform">
             <!--FORM DETAILS-->
             <div class="group">
-                <h1>Customer Details</h1>
+                <h1>Form Details</h1>
                     <div class="vda-group">
                         <label>Form No.</label>
-                        <span class="res"><?php echo $claim ?></span>
+                        <span class="res"><?php echo $form ?></span>
                     </div>
                     <div class="vda-group">
                         <label>Bodyshop</label>
-                        <span class="res"><?php echo $policy ?></span>
+                        <span class="res"><?php echo $bodyshop ?></span>
                     </div>
                     <div class="vda-group">
                         <label>Bodyshop ID</label>
-                        <span class="res"><?php echo $sname ?></span>
+                        <span class="res"><?php echo $bsid ?></span>
                     </div>
                     <div class="vda-group">
                         <label>User</label>
-                        <span class="res"><?php echo $fname ?></span>
+                        <span class="res"><?php echo $user ?></span>
                     </div>
             </div>
 

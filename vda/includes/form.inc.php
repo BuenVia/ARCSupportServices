@@ -11,6 +11,12 @@
                             if ($resultCheck > 0) {
                               while ($row = mysqli_fetch_assoc($result)) {
 
+                                $form = $row['id'];
+                                $date = $row['date'];
+                                $bodyshop = $row['bodyshop'];
+                                $bsid = $row['policyId'];
+                                $user = $row['userEmail'];
+
                                 $sname = $row['surname'];
                                 $fname = $row['fname'];
                                 $claim = $row['claimNo'];
