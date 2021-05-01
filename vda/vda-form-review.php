@@ -10,12 +10,11 @@
         
         <div class="col-sm-8">
 
-            <form action="vda-photo.php" method="post" class="vdaform">
             <!--FORM DETAILS-->
             <div class="group">
                 <h1>Form Details</h1>
                     <div class="vda-group">
-                        <label>Form No.</label>
+                        <label>Form No</label>
                         <span class="res"><?php echo $form ?></span>
                     </div>
                     <div class="vda-group">
@@ -32,14 +31,12 @@
                     </div>
             </div>
 
-               <!-- CUSTOMER DETAILS -->
+            <!-- CUSTOMER DETAILS -->
             <div class="group">
                 <h1>Customer Details</h1>
                     <div class="vda-group">
                         <label>Claim No.</label>
-
                         <span class="res"><?php echo $claim ?></span>
-
                     </div>
                     <div class="vda-group">
                         <label>Policy Number</label>
@@ -48,39 +45,34 @@
 
                     </div>
                     <div class="vda-group">
-                        <label>Customer Surname.</label>
+                        <label>Customer Surname</label>
                         <span class="res"><?php echo $sname ?></span>
                     </div>
                     <div class="vda-group">
-                        <label>Customer Firstname.</label>
+                        <label>Customer Firstname</label>
                         <span class="res"><?php echo $fname ?></span>
                     </div>
             </div>
 
-
+            <!-- ADDRESS DETAILS -->
             <div class="group">
                 <h1>Address Details</h1>
                 <div class="vda-group">
                     <label>Street Address</label>
-
                 </div>
                 <div class="vda-group">
                     <label>Town</label>
-
                 </div>
-
                 <div class="vda-group">
                     <label>County</label>
-
                 </div>
                 <div class="vda-group">
                     <label>Postcode</label>
-
                 </div>
                 <div class="vda-group">
                     <label>Phone Number</label>
-
                 </div>
+                <a href="vda-form-address.php?formId=<?php echo $form; ?>&bsid=<?php echo $bsid; ?>"><button>Edit</button></a> 
             </div>
             
     <div class="group">
@@ -201,8 +193,6 @@
     </div>
 
 
-                <input type="submit" class="btn1">
-            </form>
         </div>
 
         <div class="col-sm-2"></div>
