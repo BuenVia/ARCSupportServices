@@ -1,6 +1,6 @@
 <?php
 
-// CUSTOMER DETAILS
+// FORM DETAILS
 if (isset($_POST['create-submit'])) {
 
     require 'dbh.inc.php';
@@ -47,38 +47,42 @@ if (isset($_POST['create-submit'])) {
     mysqli_close($conn);
 }
 
-// CLAIM DETAILS
-if (isset($_POST['claim-submit'])) {
+// ADDRESS DETAILS
+if (isset($_POST['vda-address-submit'])) {
 
     require 'dbh.inc.php';
 
-    $claim = $_POST['claim'];
-    $policy = $_POST['policy'];
-    $loc = $_POST['loc'];
-    $dateLoss = $_POST['dateLoss'];
+    $formId = $_GET['formId'];
+    $bsid = $_GET['bsid'];
+
+    $street = $_POST['street'];
+    $town = $_POST['town'];
+    $county = $_POST['county'];
+    $postcode = $_POST['postcode'];
+    $phone = $_POST['phone'];
     
-    if (empty($claim) || empty($policy) || empty($loc) || empty($dateLoss)) {
-        header("Location: ../vda-form-claim.php?error=emptyfields");
+    if (empty($street) || empty($town) || empty($county) || empty($postcode) || empty($phone)) {
+        header("Location: ../vda-form-address.php?formId=".$formId."error=emptyfields");
         exit();
     }
     else {
-        $sql = "SELECT date FROM vdaform WHERE date=?";
+        $sql = "SELECT id FROM vdaform WHERE id=".$formId.";";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("Location: ../index.html?error=sqlerror");
+            header("Location: ../login.php?&error=sqlerror");
             exit();
         }
         else {
-                $sql = "INSERT INTO vdaform (date, suffix, surname, fname, street, town, county, postcode, phone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                $sql = "UPDATE vdaform SET street = ?, town = ?, county = ?, postcode = ?, phone = ? WHERE id=".$formId.";";
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
                     header("Location: ../index.html?error=sqlerror1");
                     exit();
                 }
                 else {
-                    mysqli_stmt_bind_param($stmt, "sssssssss", $date, $suffix, $sname, $fname, $street, $town, $county, $postcode, $phone);
+                    mysqli_stmt_bind_param($stmt, "sssss", $street, $town, $county, $postcode, $phone);
                     mysqli_stmt_execute($stmt);
-                    header("Location: ../vda-form-claim.php");
+                    header("Location: ../vda-form-review.php?formId=".$formId."&bsid=".$bsid);
                     exit();
                     }
             }

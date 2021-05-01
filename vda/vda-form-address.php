@@ -1,5 +1,6 @@
 <?php
     require 'header.php';
+    require 'includes/form.inc.php';
 ?>
 
 <div class="container-fluid">
@@ -9,7 +10,7 @@
         
         <div class="col-sm-8">
 
-            <form action="vda-form-claim.php" method="post" class="vdaform">
+            <form action="" method="post" class="vdaform">
                
             <div class="group">
                 <h1>Customer Details</h1>
@@ -38,7 +39,8 @@
                     <input class="form-control" type="text" name="phone" id="" placeholder="Phone...">
                 </div>
 
-                <input type="submit" class="btn1" name="customer-submit">
+                <button formaction="includes/vda.inc.php?formId=<?php echo $form?>&bsid=<?php echo $bsid?>" class="btn88 cl8" name="vda-address-submit">Submit</button>
+                <button formaction="vda-form-review.php?formId=<?php echo $form?>&bsid=<?php echo $bsid?>" class="btn88 cl8">Back</button>
 
             </div>
 
