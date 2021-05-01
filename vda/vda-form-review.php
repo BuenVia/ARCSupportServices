@@ -33,7 +33,7 @@
 
             <!-- CUSTOMER DETAILS -->
             <div class="group">
-                <h1>Customer Details</h1>
+                <h1>Customer Details</h1><?php echo sectionComplete($claim and $policy and $sname and $fname); ?>
                     <div class="vda-group">
                         <label>Claim No.</label>
                         <span class="res"><?php echo $claim ?></span>
@@ -56,7 +56,7 @@
 
             <!-- ADDRESS DETAILS -->
             <div class="group">
-                <h1>Address Details</h1>
+                <h1>Address Details</h1><?php echo sectionComplete($street and $town and $county and $postcode and $phone); ?>
                 <div class="vda-group">
                     <label>Street Address</label>
                     <span class="res"><?php echo $street ?></span>

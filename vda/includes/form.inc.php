@@ -32,5 +32,36 @@
         }
       }
     }
-                        
+      
+    // SECTIN COMPLETE FUNCTION
+    function sectionComplete($data) {
+      require'dbh.inc.php';
+    
+      $bsid = $_GET['bsid'];
+      $formId = $_GET['formId'];
+      $sql = "SELECT * FROM vdaform WHERE id=".$formId.";";
+      $result = mysqli_query($conn, $sql);
+      $resultCheck = mysqli_num_rows($result);
+    
+      if ($resultCheck > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+    
+          $street = $row['street'];
+          $town = $row['town'];
+          $county = $row['county'];
+          $postcode = $row['postcode'];
+          $phone = $row['phone'];
+    
+                    if ($data) {
+                      $done = ' <a style="color:#00FF00"><i class="fas fa-check-circle"></i></a>';
+                      echo $done;
+                    }
+                    else {
+                      $notDone = '<a style="color:red">Incomplete...</a>';
+                      echo $notDone;
+                    }
+          }
+      }
+    }
+
 ?>
