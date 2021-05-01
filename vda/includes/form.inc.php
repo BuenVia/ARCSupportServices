@@ -23,6 +23,12 @@
           $claim = $row['claimNo'];
           $policy = $row['policyId'];
 
+          $street = $row['street'];
+          $town = $row['town'];
+          $county = $row['county'];
+          $postcode = $row['postcode'];
+          $phone = $row['phone'];
+
         }
       }
     }

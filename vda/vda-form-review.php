@@ -59,18 +59,23 @@
                 <h1>Address Details</h1>
                 <div class="vda-group">
                     <label>Street Address</label>
+                    <span class="res"><?php echo $street ?></span>
                 </div>
                 <div class="vda-group">
                     <label>Town</label>
+                    <span class="res"><?php echo $town ?></span>
                 </div>
                 <div class="vda-group">
                     <label>County</label>
+                    <span class="res"><?php echo $county ?></span>
                 </div>
                 <div class="vda-group">
                     <label>Postcode</label>
+                    <span class="res"><?php echo $postcode ?></span>
                 </div>
                 <div class="vda-group">
                     <label>Phone Number</label>
+                    <span class="res"><?php echo $phone ?></span>
                 </div>
                 <a href="vda-form-address.php?formId=<?php echo $form; ?>&bsid=<?php echo $bsid; ?>"><button>Edit</button></a> 
             </div>
