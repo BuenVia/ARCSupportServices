@@ -40,7 +40,7 @@
       }
     }
       
-    // SECTIN COMPLETE FUNCTION
+    // SECTION COMPLETE FUNCTION - GREEN TICK
     function sectionComplete($data) {
       require'dbh.inc.php';
     
@@ -50,14 +50,7 @@
       $resultCheck = mysqli_num_rows($result);
     
       if ($resultCheck > 0) {
-        while ($row = mysqli_fetch_assoc($result)) {
-    
-          $street = $row['street'];
-          $town = $row['town'];
-          $county = $row['county'];
-          $postcode = $row['postcode'];
-          $phone = $row['phone'];
-    
+        while ($row = mysqli_fetch_assoc($result)) {   
                     if ($data) {
                       $done = ' <a style="color:#00FF00"><i class="fas fa-check-circle"></i></a>';
                       echo $done;
