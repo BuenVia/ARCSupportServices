@@ -29,6 +29,13 @@
           $postcode = $row['postcode'];
           $phone = $row['phone'];
 
+          $reg = $row['reg'];
+          $make = $row['make'];
+          $model = $row['model'];
+          $miles = $row['mileage'];
+          $vin = $row['vin'];
+          $adas = $row['adas'];
+
         }
       }
     }
@@ -37,7 +44,6 @@
     function sectionComplete($data) {
       require'dbh.inc.php';
     
-      $bsid = $_GET['bsid'];
       $formId = $_GET['formId'];
       $sql = "SELECT * FROM vdaform WHERE id=".$formId.";";
       $result = mysqli_query($conn, $sql);

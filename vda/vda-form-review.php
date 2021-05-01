@@ -40,8 +40,10 @@
                     </div>
                     <div class="vda-group">
                         <label>Policy Number</label>
-
                         <span class="res"><?php echo $policy ?></span>
+                    </div>
+                    <div class="vda-group">
+                        <label>Date of Loss</label>
 
                     </div>
                     <div class="vda-group">
@@ -80,54 +82,37 @@
                 <a href="vda-form-address.php?formId=<?php echo $form; ?>&bsid=<?php echo $bsid; ?>"><button>Edit</button></a> 
             </div>
             
-    <div class="group">
-        <h1>Claim Details</h1>
-        <div class="vda-group">
-            <label>Claim No.</label>
 
-        </div>
-        <div class="vda-group">
-            <label>Policy Number</label>
-
-        </div>
-        <div class="vda-group">
-            <label>Vehicle Location</label>
-
-        </div>
-        <div class="vda-group">
-            <label>Date of Loss</label>
-
-        </div>
-    </div>
 
     <div class="group">
-        <h1>Vehicle Details</h1>
+        <h1>Vehicle Details</h1><?php echo sectionComplete($reg and $make and $model and $miles and $vin and $adas); ?>
         <div class="vda-group">
             <label>Registration Number</label>
-
+            <span class="res"><?php echo $reg ?></span>
         </div>
         <div class="vda-group">
             <label>Make</label>
-
+            <span class="res"><?php echo $make ?></span>
         </div>
         <div class="vda-group">
             <label>Model</label>
-
+            <span class="res"><?php echo $model ?></span>
         </div>
         <div class="vda-group">
             <label>Mileage</label>
-
+            <span class="res"><?php echo $miles ?></span>
         </div>
 
         <div class="vda-group">
             <label>VIN</label>
-
+            <span class="res"><?php echo $vin ?></span>
         </div>
 
         <div class="vda-group">
             <label>ADAS</label>
-  
+            <span class="res"><?php echo $adas ?></span>
         </div>
+        <a href="vda-form-vehicle-details.php?formId=<?php echo $form; ?>&bsid=<?php echo $bsid; ?>"><button>Edit</button></a> 
     </div>
 
 

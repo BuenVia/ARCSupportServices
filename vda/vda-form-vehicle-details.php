@@ -1,5 +1,6 @@
 <?php
     require 'header.php';
+    require 'includes/form.inc.php';
 ?>
 
 <div class="container-fluid">
@@ -15,36 +16,37 @@
                 <h1>Vehicle Details</h1>
                 <div class="vda-group">
                     <label>Registration Number</label>
-                    <input class="form-control" type="text" name="reg" placeholder="Registration">
+                    <input class="form-control" type="text" name="reg" placeholder="Registration" value="<?php echo $reg ?>">
                 </div>
                 <div class="vda-group">
                     <label>Make</label>
-                    <input class="form-control" type="text" name="make" placeholder="Make"> 
+                    <input class="form-control" type="text" name="make" placeholder="Make" value="<?php echo $make ?>"> 
                 </div>
                 <div class="vda-group">
                     <label>Model</label>
-                    <input class="form-control" type="text" name="model" placeholder="Model"> 
+                    <input class="form-control" type="text" name="model" placeholder="Model" value="<?php echo $model ?>"> 
                 </div>
                 <div class="vda-group">
                     <label>Mileage</label>
-                    <input class="form-control" type="text" name="miles" placeholder="Mileage"> 
+                    <input class="form-control" type="text" name="miles" placeholder="Mileage" value="<?php echo $miles ?>"> 
                 </div>
 
                 <div class="vda-group">
                     <label>VIN</label>
-                    <input class="form-control" type="text" name="vin" placeholder="VIN"> 
+                    <input class="form-control" type="text" name="vin" placeholder="VIN" value="<?php echo $vin ?>"> 
                 </div>
 
                 <div class="vda-group">
                     <label>ADAS</label>
-                    <select class="form-select form-select-sm" name="suffix" id="">
+                    <select class="form-select form-select-sm" name="adas" id="" value="<?php echo $adas ?>">
                         <option value="" disabled selected>Select</option>
                         <option value="yes">Yes</option>
                         <option value="no">No</option>
                     </select>      
                 </div>
 
-                <input type="submit" class="btn1">
+                <button formaction="includes/vda.inc.php?formId=<?php echo $form?>&bsid=<?php echo $bsid?>" class="btn88 cl8" name="vda-vehicle-details-submit">Submit</button>
+                <button formaction="vda-form-review.php?formId=<?php echo $form?>&bsid=<?php echo $bsid?>" class="btn88 cl8">Back</button>
 
             </div>
     </div>
