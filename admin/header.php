@@ -23,7 +23,7 @@
 
     <div class="row">
         <div class="column-sm" style="text-align:centre">
-            <a href="index.php"><img src="../images/new_arc_logo.png" style="height:80px"></a>
+            <a href="admin.php"><img src="../images/new_arc_logo.png" style="height:80px"></a>
         </div>
 
         <div class="column-sm" style="text-align:right">

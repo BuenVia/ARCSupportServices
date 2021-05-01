@@ -1,5 +1,6 @@
 <?php
     require 'header.php';
+    require 'includes/form.inc.php';
 ?>
 
 <div class="container-fluid">
@@ -10,21 +11,50 @@
         <div class="col-sm-8">
 
             <form action="vda-photo.php" method="post" class="vdaform">
-               
+            <!--FORM DETAILS-->
             <div class="group">
                 <h1>Customer Details</h1>
-                <div class="vda-group">
-                    <label>Customer Suffix.</label>
+                    <div class="vda-group">
+                        <label>Form No.</label>
+                        <span class="res"><?php echo $claim ?></span>
+                    </div>
+                    <div class="vda-group">
+                        <label>Bodyshop</label>
+                        <span class="res"><?php echo $policy ?></span>
+                    </div>
+                    <div class="vda-group">
+                        <label>Bodyshop ID</label>
+                        <span class="res"><?php echo $sname ?></span>
+                    </div>
+                    <div class="vda-group">
+                        <label>User</label>
+                        <span class="res"><?php echo $fname ?></span>
+                    </div>
+            </div>
 
-                </div>
-                <div class="vda-group">
-                    <label>Customer Surname.</label>
+               <!-- CUSTOMER DETAILS -->
+            <div class="group">
+                <h1>Customer Details</h1>
+                    <div class="vda-group">
+                        <label>Claim No.</label>
 
-                </div>
-                <div class="vda-group">
-                    <label>Customer Firstname.</label>
+                        <span class="res"><?php echo $claim ?></span>
 
-                </div>
+                    </div>
+                    <div class="vda-group">
+                        <label>Policy Number</label>
+
+                        <span class="res"><?php echo $policy ?></span>
+
+                    </div>
+                    <div class="vda-group">
+                        <label>Customer Surname.</label>
+                        <span class="res"><?php echo $sname ?></span>
+                    </div>
+                    <div class="vda-group">
+                        <label>Customer Firstname.</label>
+                        <span class="res"><?php echo $fname ?></span>
+                    </div>
             </div>
 
 

@@ -91,6 +91,9 @@ label {
 .group label {
     color: var(--txt-clr-main);
 }
+.group span {
+    color: var(--txt-clr-one);
+}
 .vda-text {
     resize: none;
     border-radius: 10px;

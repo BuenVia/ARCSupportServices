@@ -56,11 +56,11 @@
                                 if ($resultCheck > 0) {
                                     while ($row = mysqli_fetch_assoc($result)) {
 
-                                    $bsid = $row['id'];
+                                    $formId = $row['id'];
 
                                     echo
                                     '<tr>
-                                    <td><a href="vda-form-customer.php?bsid='.$bsid.'"><button class="btn8 bsho">'.$row['id'].'</button></a></td>
+                                    <td><a href="vda-form-review.php?formId='.$formId.'"><button class="btn8 bsho">'.$row['id'].'</button></a></td>
                                     <td>'.$row['claimNo'].'</td>
                                     <td>'.$row['policyId'].'</td>
                                     <td>'.$row['surname'].'</td>
