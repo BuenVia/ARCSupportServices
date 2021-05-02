@@ -21,6 +21,9 @@
 
                         <input type="submit" name="user-login-submit"/>
                     </form>
+
+                <a href="javascript:void(0)" style="color: #fff">Forgot Password?</a>
+
                 </div>
 
                 <div class="col-sm-4"></div>
