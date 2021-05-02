@@ -10,7 +10,7 @@
         
         <div class="col-sm-8">
 
-            <form action="vda-form-vehicle-condition.php" method="post" class="vdaform">
+            <form action="" method="post" class="vdaform">
                
             <div class="group">
                 <h1>Vehicle Details</h1>

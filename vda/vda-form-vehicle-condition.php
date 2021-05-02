@@ -1,5 +1,6 @@
 <?php
     require 'header.php';
+    require 'includes/form.inc.php';
 ?>
 
 <div class="container-fluid">
@@ -9,7 +10,7 @@
         
         <div class="col-sm-8">
 
-            <form action="vda-form-tyres.php" method="post" class="vdaform">
+            <form action="" method="post" class="vdaform">
 
                 <div class="group">
                     <h1>Vehicle Condition</h1>
@@ -27,7 +28,7 @@
 
                     <div class="vda-group">
                         <label>Brakes</label>
-                        <select class="form-select form-select-sm" name="" id="">
+                        <select class="form-select form-select-sm" name="brakes" id="">
                             <option value="" readonly>Select</option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
@@ -36,7 +37,7 @@
 
                     <div class="vda-group">
                         <label>Steering</label>
-                        <select class="form-select form-select-sm" name="" id="">
+                        <select class="form-select form-select-sm" name="steering" id="">
                             <option value="" readonly>Select</option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
@@ -45,7 +46,7 @@
 
                     <div class="vda-group">
                         <label>Pre-Accident</label>
-                        <select class="form-select form-select-sm" name="" id="">
+                        <select class="form-select form-select-sm" name="preAcc" id="">
                             <option value="" readonly>Select</option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
@@ -54,7 +55,7 @@
 
                     <div class="vda-group">
                         <label>Paint</label>
-                        <select class="form-select form-select-sm" name="" id="">
+                        <select class="form-select form-select-sm" name="paint" id="">
                             <option value="" readonly>Select</option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
@@ -63,7 +64,7 @@
 
                     <div class="vda-group">
                         <label>Colour</label>
-                        <select class="form-select form-select-sm" name="" id="">
+                        <select class="form-select form-select-sm" name="colour" id="">
                             <option value="" readonly>Select</option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
@@ -72,7 +73,7 @@
 
                     <div class="vda-group">
                         <label>Body Style</label>
-                        <select class="form-select form-select-sm" name="" id="">
+                        <select class="form-select form-select-sm" name="body" id="">
                             <option value="" readonly>Select</option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
@@ -81,14 +82,15 @@
 
                     <div class="vda-group">
                         <label>Vehicle Status</label>
-                        <select class="form-select form-select-sm" name="" id="">
+                        <select class="form-select form-select-sm" name="vehStatus" id="">
                             <option value="" readonly>Select</option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
                         </select>      
                     </div>
 
-                    <input type="submit" class="btn1">
+                    <button formaction="includes/vda.inc.php?formId=<?php echo $form?>&bsid=<?php echo $bsid?>" class="btn88 cl8" name="vda-vehicle-condition-submit">Submit</button>
+                    <button formaction="vda-form-review.php?formId=<?php echo $form?>&bsid=<?php echo $bsid?>" class="btn88 cl8">Back</button>
                 </div>
 
             </form>

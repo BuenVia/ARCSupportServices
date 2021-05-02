@@ -117,69 +117,73 @@
 
 
     <div class="group">
-        <h1>Vehicle Condition</h1>
+        <h1>Vehicle Condition</h1><?php echo sectionComplete($tyres and $brakes and $steering and $preAcc and $paint and $colour and $body and $vehStatus); ?>
         <div class="vda-group">
             <label>Tyres</label>
-   
+            <span class="res"><?php echo $tyres ?></span>
         </div>
 
         <div class="vda-group">
             <label>Brakes</label>
-
+            <span class="res"><?php echo $brakes ?></span>
         </div>
 
         <div class="vda-group">
             <label>Steering</label>
-  
+            <span class="res"><?php echo $steering ?></span>
         </div>
 
         <div class="vda-group">
             <label>Pre-Accident</label>
-     
+            <span class="res"><?php echo $preAcc ?></span>
         </div>
 
         <div class="vda-group">
             <label>Paint</label>
-     
+            <span class="res"><?php echo $paint ?></span>
         </div>
 
         <div class="vda-group">
             <label>Colour</label>
-  
+            <span class="res"><?php echo $colour ?></span>
         </div>
 
         <div class="vda-group">
             <label>Body Style</label>
-     
+            <span class="res"><?php echo $body ?></span>
         </div>
 
         <div class="vda-group">
             <label>Vehicle Status</label>
- 
+            <span class="res"><?php echo $vehStatus ?></span>
         </div>
+
+        <a href="vda-form-vehicle-condition.php?formId=<?php echo $form; ?>&bsid=<?php echo $bsid; ?>"><button>Edit</button></a> 
     </div>
 
     <div class="group">
-        <h1>Tyre Condition</h1>
+        <h1>Tyre Condition</h1><?php echo sectionComplete($nsfTyre and $osfTyre and $nsrTyre and $osrTyre); ?>
         <div class="vda-group">
             <label>NSF Tyre</label>
-     
+            <span class="res"><?php echo $nsfTyre ?></span>
         </div>
 
         <div class="vda-group">
             <label>OSF Tyre</label>
-     
+            <span class="res"><?php echo $osfTyre ?></span>
         </div>
 
         <div class="vda-group">
             <label>NSR Tyre</label>
-   
+            <span class="res"><?php echo $nsrTyre ?></span>
         </div>
 
         <div class="vda-group">
             <label>OSR Tyre</label>
-    
+            <span class="res"><?php echo $osrTyre ?></span>
         </div>
+
+        <a href="vda-form-tyres.php?formId=<?php echo $form; ?>&bsid=<?php echo $bsid; ?>"><button>Edit</button></a> 
     </div>
 
 

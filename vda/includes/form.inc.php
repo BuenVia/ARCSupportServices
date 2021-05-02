@@ -37,6 +37,20 @@
           $vin = $row['vin'];
           $adas = $row['adas'];
 
+          $tyres = $row['tyres'];
+          $brakes = $row['brakes'];
+          $steering = $row['steering'];
+          $preAcc = $row['preAcc'];
+          $paint = $row['paint'];
+          $colour = $row['colour'];
+          $body = $row['body'];
+          $vehStatus = $row['vehStatus'];
+
+          $nsfTyre = $row['nsfTyre'];
+          $osfTyre = $row['osfTyre'];
+          $nsrTyre = $row['nsrTyre'];
+          $osrTyre = $row['osrTyre'];
+
         }
       }
     }

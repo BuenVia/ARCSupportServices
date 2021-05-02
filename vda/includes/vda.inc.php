@@ -137,6 +137,97 @@ if (isset($_POST['vda-vehicle-details-submit'])) {
     mysqli_close($conn);
 }
 
+// VEHICLE CONDITION
+if (isset($_POST['vda-vehicle-condition-submit'])) {
+
+    require 'dbh.inc.php';
+
+    $formId = $_GET['formId'];
+    $bsid = $_GET['bsid'];
+
+    $tyres = $_POST['tyres'];
+    $brakes = $_POST['brakes'];
+    $steering = $_POST['steering'];
+    $preAcc = $_POST['preAcc'];
+    $paint = $_POST['paint'];
+    $colour = $_POST['colour'];
+    $body = $_POST['body'];
+    $vehStatus = $_POST['vehStatus'];
+    
+    if (empty($tyres) || empty($brakes) || empty($steering) || empty($preAcc) || empty($paint) || empty($colour) || empty($body) || empty($vehStatus)) {
+        header("Location: ../vda-form-vehicle-condition.php?formId=".$formId."&error=emptyfields");
+        exit();
+    }
+    else {
+        $sql = "SELECT id FROM vdaform WHERE id=".$formId.";";
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            header("Location: ../login.php?&error=sqlerror");
+            exit();
+        }
+        else {
+                $sql = "UPDATE vdaform SET tyres = ?, brakes = ?, steering = ?, preAcc = ?, paint = ?, colour = ?, body = ?, vehStatus = ? WHERE id=".$formId.";";
+                $stmt = mysqli_stmt_init($conn);
+                if (!mysqli_stmt_prepare($stmt, $sql)) {
+                    header("Location: ../index.html?error=sqlerror1");
+                    exit();
+                }
+                else {
+                    mysqli_stmt_bind_param($stmt, "ssssssss", $tyres, $brakes, $steering, $preAcc, $paint, $colour, $body, $vehStatus);
+                    mysqli_stmt_execute($stmt);
+                    header("Location: ../vda-form-review.php?formId=".$formId."&bsid=".$bsid);
+                    exit();
+                    }
+            }
+    }
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+}
+
+// TYRES STATUS
+if (isset($_POST['vda-tyres-submit'])) {
+
+    require 'dbh.inc.php';
+
+    $formId = $_GET['formId'];
+    $bsid = $_GET['bsid'];
+
+    $nsf = $_POST['nsf'];
+    $osf = $_POST['osf'];
+    $nsr = $_POST['nsr'];
+    $osr = $_POST['osr'];
+
+    
+    if (empty($nsf) || empty($osf) || empty($nsr) || empty($osr)) {
+        header("Location: ../vda-form-tyres.php?formId=".$formId."&error=emptyfields");
+        exit();
+    }
+    else {
+        $sql = "SELECT id FROM vdaform WHERE id=".$formId.";";
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            header("Location: ../login.php?&error=sqlerror");
+            exit();
+        }
+        else {
+                $sql = "UPDATE vdaform SET nsfTyre = ?, osfTyre = ?, nsrTyre = ?, osrTyre = ? WHERE id=".$formId.";";
+                $stmt = mysqli_stmt_init($conn);
+                if (!mysqli_stmt_prepare($stmt, $sql)) {
+                    header("Location: ../index.html?error=sqlerror1");
+                    exit();
+                }
+                else {
+                    mysqli_stmt_bind_param($stmt, "ssss", $nsf, $osf, $nsr, $osr);
+                    mysqli_stmt_execute($stmt);
+                    header("Location: ../vda-form-review.php?formId=".$formId."&bsid=".$bsid);
+                    exit();
+                    }
+            }
+    }
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+}
+
 // FALLBACK
 else {
     echo "false";
