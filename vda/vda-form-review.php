@@ -44,7 +44,7 @@
                     </div>
                     <div class="vda-group">
                         <label>Date of Loss</label>
-
+                        <span class="res"><?php echo $dateLoss ?></span>
                     </div>
                     <div class="vda-group">
                         <label>Customer Surname</label>

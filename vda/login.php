@@ -41,8 +41,9 @@
                             <th style="font-size: 15px; width:50px">ID:</th>
                             <th style="font-size: 15px; width:250px">Claim Number:</th>
                             <th style="font-size: 15px; width:250px">Policy Number:</th>
-                            <th style="font-size: 15px; width:250px">Last Name:</th>
+                            <th style="font-size: 15px; width:300px">Last Name:</th>
                             <th style="font-size: 15px; width:250px">First Name:</th>
+                            <th style="font-size: 15px; width:300px">Date of Loss:</th>
                             <th style="font-size: 15px; width:250px">Completed:</th>
                         </tr>
 
@@ -65,6 +66,7 @@
                                     <td>'.$row['policyId'].'</td>
                                     <td>'.$row['surname'].'</td>
                                     <td>'.$row['fname'].'</td>
+                                    <td>'.$row['dateLoss'].'</td>
                                     <td>0%</td></tr>';
                                     }
                                 }

@@ -16,8 +16,9 @@ if (isset($_POST['create-submit'])) {
     $fname = $_POST['fname'];
     $claim = $_POST['claim'];
     $policy = $_POST['policy'];
+    $dateLoss = $_POST['dateLoss'];
     
-    if (empty($sname) || empty($fname) || empty($claim) || empty($policy)) {
+    if (empty($sname) || empty($fname) || empty($claim) || empty($policy) || empty($dateLoss)) {
         header("Location: ../vda-form-create.php?error=emptyfields");
         exit();
     }
@@ -29,14 +30,14 @@ if (isset($_POST['create-submit'])) {
             exit();
         }
         else {
-                $sql = "INSERT INTO vdaform (date, userId, userEmail, bodyshop, bsid, surname, fname, claimNo, policyId) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                $sql = "INSERT INTO vdaform (date, userId, userEmail, bodyshop, bsid, surname, fname, claimNo, policyId, dateLoss) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
                     header("Location: ../vda-form-create.php?error=sqlerror1");
                     exit();
                 }
                 else {
-                    mysqli_stmt_bind_param($stmt, "sssssssss", $date, $userId, $userEmail, $bodyshop, $bsid, $sname, $fname, $claim, $policy);
+                    mysqli_stmt_bind_param($stmt, "ssssssssss", $date, $userId, $userEmail, $bodyshop, $bsid, $sname, $fname, $claim, $policy, $dateLoss);
                     mysqli_stmt_execute($stmt);
                     header("Location: ../login.php?success=true");
                     exit();

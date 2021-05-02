@@ -1,3 +1,5 @@
+Edit Claim Details
+
 Forgot Password
 
 Change Password In Settings

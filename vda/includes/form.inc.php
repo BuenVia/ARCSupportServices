@@ -22,6 +22,7 @@
           $fname = $row['fname'];
           $claim = $row['claimNo'];
           $policy = $row['policyId'];
+          $dateLoss = $row['dateLoss'];
 
           $street = $row['street'];
           $town = $row['town'];
