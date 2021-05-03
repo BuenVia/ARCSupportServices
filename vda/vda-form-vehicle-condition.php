@@ -18,11 +18,11 @@
                         <label>Tyres</label>
                         <select class="form-select form-select-sm" name="tyres" id="">
                             <option value="" disabled selected>Select</option>
-                            <option value="yes">As New</option>
-                            <option value="no">Excellent</option>
-                            <option value="yes">Fair</option>
-                            <option value="no">Good</option>
-                            <option value="yes">Poor</option>
+                            <option value="As New">As New</option>
+                            <option value="Excellent">Excellent</option>
+                            <option value="Fair">Fair</option>
+                            <option value="Good">Good</option>
+                            <option value="Poor">Poor</option>
                         </select>      
                     </div>
 
@@ -30,8 +30,9 @@
                         <label>Brakes</label>
                         <select class="form-select form-select-sm" name="brakes" id="">
                             <option value="" readonly>Select</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="Satisfactory">Satisfactory</option>
+                            <option value="Untestable">Untestable</option>
+                            <option value="Not Satisfactory">Not Satisfactory</option>
                         </select>      
                     </div>
 
@@ -39,8 +40,9 @@
                         <label>Steering</label>
                         <select class="form-select form-select-sm" name="steering" id="">
                             <option value="" readonly>Select</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="Satisfactory">Satisfactory</option>
+                            <option value="Untestable">Untestable</option>
+                            <option value="Not Satisfactory">Not Satisfactory</option>
                         </select>      
                     </div>
 
@@ -48,8 +50,11 @@
                         <label>Pre-Accident</label>
                         <select class="form-select form-select-sm" name="preAcc" id="">
                             <option value="" readonly>Select</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="As New">As New</option>
+                            <option value="Excellent">Excellent</option>
+                            <option value="Fair">Fair</option>
+                            <option value="Good">Good</option>
+                            <option value="Poor">Poor</option>
                         </select>      
                     </div>
 
@@ -57,8 +62,11 @@
                         <label>Paint</label>
                         <select class="form-select form-select-sm" name="paint" id="">
                             <option value="" readonly>Select</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="Solid COB">Solid COB</option>
+                            <option value="Metallic COB">Metallic COB</option>
+                            <option value="Pearl Mica">Pearl Mica</option>
+                            <option value="3 Stage Pearl">3 Stage Pearl</option>
+                            <option value="4 Stage Pearl">4 Stage Pearl</option>
                         </select>      
                     </div>
 
@@ -66,8 +74,14 @@
                         <label>Colour</label>
                         <select class="form-select form-select-sm" name="colour" id="">
                             <option value="" readonly>Select</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="White">White</option>
+                            <option value="Black">Black</option>
+                            <option value="Blue">Blue</option>
+                            <option value="Red">Red</option>
+                            <option value="Yellow">Yellow</option>
+                            <option value="Green">Green</option>
+                            <option value="Orange">Orange</option>
+                            <option value="Grey">Grey</option>
                         </select>      
                     </div>
 
@@ -75,8 +89,14 @@
                         <label>Body Style</label>
                         <select class="form-select form-select-sm" name="body" id="">
                             <option value="" readonly>Select</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="Saloon">Saloon</option>
+                            <option value="Hatchback">Hatchback</option>
+                            <option value="Estate">Estate</option>
+                            <option value="Coupe">Coupe</option>
+                            <option value="Convertible">Convertible</option>
+                            <option value="Pick Up">Pick Up</option>
+                            <option value="Van">Van</option>
+                            <option value="Minibus">Minibus</option>
                         </select>      
                     </div>
 
@@ -84,8 +104,9 @@
                         <label>Vehicle Status</label>
                         <select class="form-select form-select-sm" name="vehStatus" id="">
                             <option value="" readonly>Select</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="Mobile">Mobile</option>
+                            <option value="Roadworthy">Roadworthy</option>
+                            <option value="Unroadworthy">Unroadworthy</option>
                         </select>      
                     </div>
 

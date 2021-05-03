@@ -18,8 +18,17 @@
                         <label>NSF Tyre</label>
                         <select class="form-select form-select-sm" name="nsf" id="">
                             <option value="" readonly>Select</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="+">+</option>
                         </select>      
                     </div>
 
@@ -27,8 +36,17 @@
                         <label>OSF Tyre</label>
                         <select class="form-select form-select-sm" name="osf" id="">
                             <option value="" readonly>Select</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="+">+</option>
                         </select>      
                     </div>
 
@@ -36,8 +54,17 @@
                         <label>NSR Tyre</label>
                         <select class="form-select form-select-sm" name="nsr" id="">
                             <option value="" readonly>Select</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="+">+</option>
                         </select>      
                     </div>
 
@@ -45,8 +72,17 @@
                         <label>OSR Tyre</label>
                         <select class="form-select form-select-sm" name="osr" id="">
                             <option value="" readonly>Select</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="+">+</option>
                         </select>      
                     </div>
 
