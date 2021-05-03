@@ -59,7 +59,7 @@
       }
     }
       
-    // SECTION COMPLETE FUNCTION - GREEN TICK
+    // SECTION COMPLETE FUNCTION - GREEN TICK / RED INCOMPLETE
     function sectionComplete($data) {
       require'dbh.inc.php';
     

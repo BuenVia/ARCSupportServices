@@ -16,17 +16,17 @@
 
                     <div class="vda-group">
                         <label>Repair Instruction</label><br>
-                        <textarea name="repIns" id="" cols="30" rows="10" class="vda-text"><?php echo $repIns?></textarea>
+                        <textarea name="repIns" id="" cols="30" rows="10" class="vda-text" maxlength="700"><?php echo $repIns?></textarea>
                     </div>
 
                     <div class="vda-group">
                         <label>Supplementary Repair Instruction</label><br>
-                        <textarea name="supRepIns" id="" cols="30" rows="10" class="vda-text"><?php echo $supRepIns?></textarea>
+                        <textarea name="supRepIns" id="" cols="30" rows="10" class="vda-text" maxlength="700"><?php echo $supRepIns?></textarea>
                     </div>
 
                     <div class="vda-group">
                         <label>Any further notes</label><br>
-                        <textarea name="furNote" id="" cols="30" rows="10" class="vda-text"><?php echo $furNote?></textarea>
+                        <textarea name="furNote" id="" cols="30" rows="10" class="vda-text" maxlength="700"><?php echo $furNote?></textarea>
                     </div>
 
                     <button formaction="includes/vda.inc.php?formId=<?php echo $form?>&bsid=<?php echo $bsid?>" class="btn88 cl8" name="vda-notes-submit">Submit</button>

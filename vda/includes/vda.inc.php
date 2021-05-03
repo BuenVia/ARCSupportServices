@@ -70,14 +70,14 @@ if (isset($_POST['vda-claim-submit'])) {
         $sql = "SELECT id FROM vdaform WHERE id=".$formId.";";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("Location: ../login.php?&error=sqlerror");
+            header("Location: ../vda-form-claim.php?&error=sqlerror");
             exit();
         }
         else {
                 $sql = "UPDATE vdaform SET surname = ?, fname = ?, claimNo = ?, policyId = ?, dateLoss = ? WHERE id=".$formId.";";
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
-                    header("Location: ../index.html?error=sqlerror1");
+                    header("Location: ../vda-form-claim.html?error=sqlerror1");
                     exit();
                 }
                 else {
@@ -114,14 +114,14 @@ if (isset($_POST['vda-address-submit'])) {
         $sql = "SELECT id FROM vdaform WHERE id=".$formId.";";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("Location: ../login.php?&error=sqlerror");
+            header("Location: ../vda-form-address.php?&error=sqlerror");
             exit();
         }
         else {
                 $sql = "UPDATE vdaform SET street = ?, town = ?, county = ?, postcode = ?, phone = ? WHERE id=".$formId.";";
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
-                    header("Location: ../index.html?error=sqlerror1");
+                    header("Location: ../vda-form-address.html?error=sqlerror1");
                     exit();
                 }
                 else {
@@ -159,14 +159,14 @@ if (isset($_POST['vda-vehicle-details-submit'])) {
         $sql = "SELECT id FROM vdaform WHERE id=".$formId.";";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("Location: ../login.php?&error=sqlerror");
+            header("Location: ../vda-form-vehicle-details.php?&error=sqlerror");
             exit();
         }
         else {
                 $sql = "UPDATE vdaform SET reg = ?, make = ?, model = ?, mileage = ?, vin = ?, adas = ? WHERE id=".$formId.";";
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
-                    header("Location: ../index.html?error=sqlerror1");
+                    header("Location: ../vda-form-vehicle-details.html?error=sqlerror1");
                     exit();
                 }
                 else {
@@ -206,14 +206,14 @@ if (isset($_POST['vda-vehicle-condition-submit'])) {
         $sql = "SELECT id FROM vdaform WHERE id=".$formId.";";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("Location: ../login.php?&error=sqlerror");
+            header("Location: ../vda-form-vehicle-condition.php?&error=sqlerror");
             exit();
         }
         else {
                 $sql = "UPDATE vdaform SET tyres = ?, brakes = ?, steering = ?, preAcc = ?, paint = ?, colour = ?, body = ?, vehStatus = ? WHERE id=".$formId.";";
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
-                    header("Location: ../index.html?error=sqlerror1");
+                    header("Location: ../vda-form-vehicle-condition.html?error=sqlerror1");
                     exit();
                 }
                 else {
@@ -250,14 +250,14 @@ if (isset($_POST['vda-tyres-submit'])) {
         $sql = "SELECT id FROM vdaform WHERE id=".$formId.";";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("Location: ../login.php?&error=sqlerror");
+            header("Location: ../vda-form-tyres.php?&error=sqlerror");
             exit();
         }
         else {
                 $sql = "UPDATE vdaform SET nsfTyre = ?, osfTyre = ?, nsrTyre = ?, osrTyre = ? WHERE id=".$formId.";";
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
-                    header("Location: ../index.html?error=sqlerror1");
+                    header("Location: ../vda-form-tyres.html?error=sqlerror1");
                     exit();
                 }
                 else {
@@ -287,14 +287,14 @@ if (isset($_POST['vda-notes-submit'])) {
     $sql = "SELECT id FROM vdaform WHERE id=".$formId.";";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("Location: ../login.php?&error=sqlerror");
+        header("Location: ../vda-form-notes.php?&error=sqlerror");
         exit();
     }
     else {
             $sql = "UPDATE vdaform SET repIns = ?, supRepIns = ?, furNote = ? WHERE id=".$formId.";";
             $stmt = mysqli_stmt_init($conn);
             if (!mysqli_stmt_prepare($stmt, $sql)) {
-                header("Location: ../login.html?error=sqlerror1");
+                header("Location: ../vda-form-notes.html?error=sqlerror1");
                 exit();
             }
             else {
@@ -309,9 +309,9 @@ if (isset($_POST['vda-notes-submit'])) {
     mysqli_close($conn);
 }
 
-// FALLBACK
+// FALLBACK - UNAUTHORISED ACCESS
 else {
-    echo "false";
+    header("Location: ../index.php?access=unauthorised");
 }
 
 ?>

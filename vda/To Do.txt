@@ -1,9 +1,3 @@
-Additional Notes Section
-
-Update VDA.INC.PHP Header Locations
-
-Add Char Limit to Notes Boxes
-
 Show Select List Value As DB Value
 
 Forgot Password
@@ -25,6 +19,8 @@ Cookies Policy
 Photo Upload
 
 CSS For Web App
+
+All Form Text To Sit inside of box containers (see notes section for long notes)
 
 Think Of Name For Web App
 
