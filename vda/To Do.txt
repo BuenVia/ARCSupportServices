@@ -4,13 +4,13 @@ Show Forms 'Pending', 'Submitted' and 'Completed'
 
 Completed Forms To Be Archived
 
-Cookies Policy
-
 Photo Upload
 
 Forgot Password
 
 Change Password In Settings
+
+Cookies Policy
 
 CSS For Web App
 
