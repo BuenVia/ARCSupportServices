@@ -54,6 +54,7 @@
                         <label>Customer Firstname</label>
                         <span class="res"><?php echo $fname ?></span>
                     </div>
+                    <a href="vda-form-claim.php?formId=<?php echo $form; ?>&bsid=<?php echo $bsid; ?>"><button>Edit</button></a> 
             </div>
 
             <!-- ADDRESS DETAILS -->

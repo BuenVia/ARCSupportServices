@@ -13,8 +13,6 @@
             <form action="" method="post" class="vdaform">
                
             <div class="group">
-                <h1>Customer Details</h1>
-
 
                 <h1>Address Details</h1>
                 <div class="vda-group">

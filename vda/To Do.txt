@@ -1,7 +1,3 @@
-Vehicle Condition + Tyre Condition Select Options
-
-Edit Claim Details
-
 Additional Notes Section
 
 Show Select List Value As DB Value
@@ -27,3 +23,5 @@ Photo Upload
 CSS For Web App
 
 Think Of Name For Web App
+
+Refactor PHP code in HTML pages (Create functions and call them)

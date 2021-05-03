@@ -1,5 +1,6 @@
 <?php
     require 'header.php';
+    require 'includes/form.inc.php';
 ?>
 
 <div class="container-fluid">
@@ -9,28 +10,38 @@
         
         <div class="col-sm-8">
 
-            <form action="vda-form-vehicle-details.php" method="post" class="vdaform">
+            <form action="" method="post" class="vdaform">
 
-                        
-                <div class="group">
-                    <h1>Claim Details</h1>
+            <h1>Claim Details</h1>
+
                     <div class="vda-group">
-                        <label>Claim No.</label>
-                        <input class="form-control" type="text" name="claim" id="" placeholder="Claim...">
+                        <label>Customer Last Name</label>
+                        <input class="form-control" type="text" name="sname" id="" placeholder="Customer Last Name..." value="<?php echo $sname ?>">
+                    </div>
+                    <div class="vda-group">
+                        <label>Customer First Name</label>
+                        <input class="form-control" type="text" name="fname" id="" placeholder="Customer First Name..." value="<?php echo $fname ?>">
+                    </div>
+
+                    <div class="vda-group">
+                        <label>Claim Number</label>
+                        <input class="form-control" type="text" name="claim" id="" placeholder="Claim..." value="<?php echo $claim ?>">
                     </div>
                     <div class="vda-group">
                         <label>Policy Number</label>
-                        <input class="form-control" type="text" name="policy" id="" placeholder="Policy">
+                        <input class="form-control" type="text" name="policy" id="" placeholder="Policy" value="<?php echo $policy ?>">
                     </div>
-                    <div class="vda-group">
-                        <label>Vehicle Location</label>
-                        <input class="form-control" type="text" name="loc" id="" placeholder="Location...">
-                    </div>
+
                     <div class="vda-group">
                         <label>Date of Loss</label>
-                        <input class="form-control" type="date" name="dateLoss" id="">
+                        <input class="form-control" type="date" name="dateLoss" id="" value="<?php echo $dateLoss ?>">
                     </div>
-                    <input type="submit" class="btn1" name="claim-submit">
+
+
+
+
+                    <button formaction="includes/vda.inc.php?formId=<?php echo $form?>&bsid=<?php echo $bsid?>" class="btn88 cl8" name="vda-claim-submit">Submit</button>
+                    <button formaction="vda-form-review.php?formId=<?php echo $form?>&bsid=<?php echo $bsid?>" class="btn88 cl8">Back</button>
                 </div>
 
         </div>
