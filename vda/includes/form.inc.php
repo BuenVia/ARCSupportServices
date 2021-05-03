@@ -124,7 +124,7 @@
     }
 
     // FRONT PAGE TABLE DISPLAY
-    function status() {
+    function statusPend() {
       require'includes/dbh.inc.php';
       $sql = "SELECT * FROM vdaform WHERE bsid=".$_SESSION['bsid'].";";
       $result = mysqli_query($conn, $sql);
@@ -132,21 +132,55 @@
 
       if ($resultCheck > 0) {
           while ($row = mysqli_fetch_assoc($result)) {
+            $status = $row['status'];
+            if($status == 'Pending') {
 
-          $formId = $row['id'];
+              $formId = $row['id'];
 
-          echo
-          '<tr>
-          <td><a href="vda-form-review.php?formId='.$formId.'"><button class="btn8 bsho">'.$row['id'].'</button></a></td>
-          <td>'.$row['claimNo'].'</td>
-          <td>'.$row['policyId'].'</td>
-          <td>'.$row['surname'].'</td>
-          <td>'.$row['fname'].'</td>
-          <td>'.$row['dateLoss'].'</td>
-          <td>0%</td></tr>';
+              echo
+              '<tr>
+              <td><a href="vda-form-review.php?formId='.$formId.'"><button class="btn8 bsho">'.$row['id'].'</button></a></td>
+              <td>'.$row['claimNo'].'</td>
+              <td>'.$row['policyId'].'</td>
+              <td>'.$row['surname'].'</td>
+              <td>'.$row['fname'].'</td>
+              <td>'.$row['dateLoss'].'</td>
+              <td>'.$row['status'].'</td></tr>';
+
+            } 
           }
       } else {
-        Nothing outstanding.
+        echo 'Nothing outstanding.';
+      }
+    }
+
+    function statusSubmitted() {
+      require'includes/dbh.inc.php';
+      $sql = "SELECT * FROM vdaform WHERE bsid=".$_SESSION['bsid'].";";
+      $result = mysqli_query($conn, $sql);
+      $resultCheck = mysqli_num_rows($result);    
+
+      if ($resultCheck > 0) {
+          while ($row = mysqli_fetch_assoc($result)) {
+            $status = $row['status'];
+            if($status == 'Submitted') {
+
+              $formId = $row['id'];
+
+              echo
+              '<tr>
+              <td><a href="vda-form-review.php?formId='.$formId.'"><button class="btn8 bsho">'.$row['id'].'</button></a></td>
+              <td>'.$row['claimNo'].'</td>
+              <td>'.$row['policyId'].'</td>
+              <td>'.$row['surname'].'</td>
+              <td>'.$row['fname'].'</td>
+              <td>'.$row['dateLoss'].'</td>
+              <td>'.$row['status'].'</td></tr>';
+
+            }  
+          }
+      } else {
+        echo 'Nothing Awating Review.';
       }
     }
 

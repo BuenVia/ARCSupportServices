@@ -1,5 +1,6 @@
 <?php
     require 'header.php';
+    require 'includes/form.inc.php';
 ?>
 <body>
     <div class="container-fluid">
@@ -44,33 +45,11 @@
                             <th style="font-size: 15px; width:300px">Last Name:</th>
                             <th style="font-size: 15px; width:250px">First Name:</th>
                             <th style="font-size: 15px; width:300px">Date of Loss:</th>
-                            <th style="font-size: 15px; width:250px">Completed:</th>
+                            <th style="font-size: 15px; width:250px">Status:</th>
                         </tr>
 
                         <tr>
-                            <?php
-                            require'includes/dbh.inc.php';
-                                $sql = "SELECT * FROM vdaform WHERE bsid=".$_SESSION['bsid'].";";
-                                $result = mysqli_query($conn, $sql);
-                                $resultCheck = mysqli_num_rows($result);    
-
-                                if ($resultCheck > 0) {
-                                    while ($row = mysqli_fetch_assoc($result)) {
-
-                                    $formId = $row['id'];
-
-                                    echo
-                                    '<tr>
-                                    <td><a href="vda-form-review.php?formId='.$formId.'"><button class="btn8 bsho">'.$row['id'].'</button></a></td>
-                                    <td>'.$row['claimNo'].'</td>
-                                    <td>'.$row['policyId'].'</td>
-                                    <td>'.$row['surname'].'</td>
-                                    <td>'.$row['fname'].'</td>
-                                    <td>'.$row['dateLoss'].'</td>
-                                    <td>0%</td></tr>';
-                                    }
-                                }
-                            ?>
+                            <?php statusPend() ?>
                         </tr>
 
                     </table>  
@@ -79,6 +58,30 @@
                 
         </div>
 
+        <div class="row">
+                
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    <table style="background: black; color: #fff;">
+                        <tr style="background:#999">
+                            <th style="font-size: 15px; width:50px">ID:</th>
+                            <th style="font-size: 15px; width:250px">Claim Number:</th>
+                            <th style="font-size: 15px; width:250px">Policy Number:</th>
+                            <th style="font-size: 15px; width:300px">Last Name:</th>
+                            <th style="font-size: 15px; width:250px">First Name:</th>
+                            <th style="font-size: 15px; width:300px">Date of Loss:</th>
+                            <th style="font-size: 15px; width:250px">Status:</th>
+                        </tr>
+
+                        <tr>
+                            <?php statusSubmitted() ?>
+                        </tr>
+
+                    </table>  
+                </div>
+                <div class="col-sm-4"></div>
+                
+        </div>
 
     </div>
 

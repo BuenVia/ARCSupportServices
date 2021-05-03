@@ -213,8 +213,7 @@
 
             <div class="group">
                 <form action="includes/vda.inc.php?formId=<?php echo $form?>&bsid=<?php echo $bsid?>" method="POST">
-                    <input type="text" value="Submitted" hidden>
-                    <?php formSubmit($nsfTyre) ?>
+                    <?php formSubmit($street and $town and $county and $postcode and $phone and $reg and $make and $model and $miles and $vin and $adas and $tyres and $brakes and $steering and $preAcc and $paint and $colour and $body and $vehStatus and $nsfTyre and $osfTyre and $nsrTyre and $osrTyre) ?>
                 </form>
             </div>
 

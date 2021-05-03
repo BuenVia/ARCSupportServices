@@ -106,6 +106,10 @@ label {
     color: var(--txt-clr-main);
 }
 
+table {
+    margin: 10px;
+}
+
 /* PHOTOS */
  input[type="file"] {
      color: var(--txt-clr-one);

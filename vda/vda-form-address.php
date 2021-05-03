@@ -17,7 +17,7 @@
                 <h1>Address Details</h1>
                 <div class="vda-group">
                     <label>Street Address</label>
-                    <input class="form-control" type="text" name="street" id="" value="<?php echo $street ?>">
+                    <input class="form-control" type="text" name="street" id="" placeholder="Town..." value="<?php echo $street ?>">
                 </div>
                 <div class="vda-group">
                     <label>Town</label>
