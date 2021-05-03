@@ -18,6 +18,10 @@
                         <span class="res"><?php echo $form ?></span>
                     </div>
                     <div class="vda-group">
+                        <label>Form Status</label>
+                        <span class="res"><?php echo $status ?></span>
+                    </div>
+                    <div class="vda-group">
                         <label>Bodyshop</label>
                         <span class="res"><?php echo $bodyshop ?></span>
                     </div>
@@ -207,6 +211,12 @@
                 <a href="vda-form-notes.php?formId=<?php echo $form; ?>&bsid=<?php echo $bsid; ?>"><button>Edit</button></a> 
             </div>
 
+            <div class="group">
+                <form action="includes/vda.inc.php?formId=<?php echo $form?>&bsid=<?php echo $bsid?>" method="POST">
+                    <input type="text" value="Submitted" hidden>
+                    <?php formSubmit($nsfTyre) ?>
+                </form>
+            </div>
 
         </div>
 

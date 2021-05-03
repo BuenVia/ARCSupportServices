@@ -1,14 +1,4 @@
-Show Select List Value As DB Value
-
-Forgot Password
-
-Change Password In Settings
-
-Text Entry To String
-
-Submit Completed Button
-
-Show Forms 'Pedning', 'Submitted' and 'Completed'
+Show Forms 'Pending', 'Submitted' and 'Completed'
 (User -> can toggle between pending and submitted)
 (Admin -> can toggle between pending and completed)
 
@@ -17,6 +7,10 @@ Completed Forms To Be Archived
 Cookies Policy
 
 Photo Upload
+
+Forgot Password
+
+Change Password In Settings
 
 CSS For Web App
 

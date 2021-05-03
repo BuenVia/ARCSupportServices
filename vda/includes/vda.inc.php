@@ -1,6 +1,6 @@
 <?php
 
-// FORM DETAILS
+// FORM CREATE
 if (isset($_POST['create-submit'])) {
 
     require 'dbh.inc.php';
@@ -17,6 +17,7 @@ if (isset($_POST['create-submit'])) {
     $claim = $_POST['claim'];
     $policy = $_POST['policy'];
     $dateLoss = $_POST['dateLoss'];
+    $status = 'Pending';
     
     if (empty($sname) || empty($fname) || empty($claim) || empty($policy) || empty($dateLoss)) {
         header("Location: ../vda-form-create.php?error=emptyfields");
@@ -30,14 +31,14 @@ if (isset($_POST['create-submit'])) {
             exit();
         }
         else {
-                $sql = "INSERT INTO vdaform (date, userId, userEmail, bodyshop, bsid, surname, fname, claimNo, policyId, dateLoss) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                $sql = "INSERT INTO vdaform (date, userId, userEmail, bodyshop, bsid, status,surname, fname, claimNo, policyId, dateLoss) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
                     header("Location: ../vda-form-create.php?error=sqlerror1");
                     exit();
                 }
                 else {
-                    mysqli_stmt_bind_param($stmt, "ssssssssss", $date, $userId, $userEmail, $bodyshop, $bsid, $sname, $fname, $claim, $policy, $dateLoss);
+                    mysqli_stmt_bind_param($stmt, "sssssssssss", $date, $userId, $userEmail, $bodyshop, $bsid, $status, $sname, $fname, $claim, $policy, $dateLoss);
                     mysqli_stmt_execute($stmt);
                     header("Location: ../login.php?success=true");
                     exit();
@@ -301,6 +302,41 @@ if (isset($_POST['vda-notes-submit'])) {
                 mysqli_stmt_bind_param($stmt, "sss", $repIns, $supRepIns, $furNote);
                 mysqli_stmt_execute($stmt);
                 header("Location: ../vda-form-review.php?formId=".$formId."&bsid=".$bsid);
+                exit();
+                }
+        }
+    
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+}
+
+// COMPLETE FORM
+if (isset($_POST['vda-form-submit'])) {
+
+    require 'dbh.inc.php';
+
+    $formId = $_GET['formId'];
+    $bsid = $_GET['bsid'];
+
+    $submitted = 'Submitted';
+
+    $sql = "SELECT id FROM vdaform WHERE id=".$formId.";";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("Location: ../vda-form-review.php?&error=sqlerror");
+        exit();
+    }
+    else {
+            $sql = "UPDATE vdaform SET status = ? WHERE id=".$formId.";";
+            $stmt = mysqli_stmt_init($conn);
+            if (!mysqli_stmt_prepare($stmt, $sql)) {
+                header("Location: ../vda-form-review.html?error=sqlerror1");
+                exit();
+            }
+            else {
+                mysqli_stmt_bind_param($stmt, "s", $submitted);
+                mysqli_stmt_execute($stmt);
+                header("Location: ../login.php?formId=".$formId."&bsid=".$bsid);
                 exit();
                 }
         }

@@ -17,6 +17,7 @@
           $bodyshop = $row['bodyshop'];
           $bsid = $row['bsid'];
           $user = $row['userEmail'];
+          $status = $row['status'];
 
           $sname = $row['surname'];
           $fname = $row['fname'];
@@ -105,5 +106,48 @@
       }
     }
 
+    // FORM SUBMIT BUTTON
+    function formSubmit($data) {
+      require 'dbh.inc.php';
+
+      $formId = $_GET['formId'];
+      $sql = "SELECT * FROM vdaform WHERE id=".$formId.";";
+      $result = mysqli_query($conn, $sql);
+      $resultCheck = mysqli_num_rows($result);
+
+      if($data) {
+        echo '<p>This form can now be submitted!</p>
+              <input type="submit" name="vda-form-submit">';
+      } else {
+        echo 'All Sections Must Be Completed!';
+      }
+    }
+
+    // FRONT PAGE TABLE DISPLAY
+    function status() {
+      require'includes/dbh.inc.php';
+      $sql = "SELECT * FROM vdaform WHERE bsid=".$_SESSION['bsid'].";";
+      $result = mysqli_query($conn, $sql);
+      $resultCheck = mysqli_num_rows($result);    
+
+      if ($resultCheck > 0) {
+          while ($row = mysqli_fetch_assoc($result)) {
+
+          $formId = $row['id'];
+
+          echo
+          '<tr>
+          <td><a href="vda-form-review.php?formId='.$formId.'"><button class="btn8 bsho">'.$row['id'].'</button></a></td>
+          <td>'.$row['claimNo'].'</td>
+          <td>'.$row['policyId'].'</td>
+          <td>'.$row['surname'].'</td>
+          <td>'.$row['fname'].'</td>
+          <td>'.$row['dateLoss'].'</td>
+          <td>0%</td></tr>';
+          }
+      } else {
+        Nothing outstanding.
+      }
+    }
 
 ?>
