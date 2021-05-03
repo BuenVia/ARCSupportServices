@@ -51,6 +51,10 @@
           $nsrTyre = $row['nsrTyre'];
           $osrTyre = $row['osrTyre'];
 
+          $repIns = $row['repIns'];
+          $supRepIns = $row['supRepIns'];
+          $furNote = $row['furNote'];
+
         }
       }
     }
