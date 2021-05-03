@@ -17,7 +17,7 @@
                     <div class="vda-group">
                         <label>Tyres</label>
                         <select class="form-select form-select-sm" name="tyres" id="">
-                            <option value="" disabled selected>Select</option>
+                            <?php selectRes($tyres) ?>
                             <option value="As New">As New</option>
                             <option value="Excellent">Excellent</option>
                             <option value="Fair">Fair</option>
@@ -29,7 +29,7 @@
                     <div class="vda-group">
                         <label>Brakes</label>
                         <select class="form-select form-select-sm" name="brakes" id="">
-                            <option value="" readonly>Select</option>
+                            <?php selectRes($brakes) ?>
                             <option value="Satisfactory">Satisfactory</option>
                             <option value="Untestable">Untestable</option>
                             <option value="Not Satisfactory">Not Satisfactory</option>
@@ -39,7 +39,7 @@
                     <div class="vda-group">
                         <label>Steering</label>
                         <select class="form-select form-select-sm" name="steering" id="">
-                            <option value="" readonly>Select</option>
+                            <?php selectRes($steering) ?>
                             <option value="Satisfactory">Satisfactory</option>
                             <option value="Untestable">Untestable</option>
                             <option value="Not Satisfactory">Not Satisfactory</option>
@@ -49,7 +49,7 @@
                     <div class="vda-group">
                         <label>Pre-Accident</label>
                         <select class="form-select form-select-sm" name="preAcc" id="">
-                            <option value="" readonly>Select</option>
+                            <?php selectRes($preAcc) ?>
                             <option value="As New">As New</option>
                             <option value="Excellent">Excellent</option>
                             <option value="Fair">Fair</option>
@@ -61,7 +61,7 @@
                     <div class="vda-group">
                         <label>Paint</label>
                         <select class="form-select form-select-sm" name="paint" id="">
-                            <option value="" readonly>Select</option>
+                            <?php selectRes($paint) ?>
                             <option value="Solid COB">Solid COB</option>
                             <option value="Metallic COB">Metallic COB</option>
                             <option value="Pearl Mica">Pearl Mica</option>
@@ -73,7 +73,7 @@
                     <div class="vda-group">
                         <label>Colour</label>
                         <select class="form-select form-select-sm" name="colour" id="">
-                            <option value="" readonly>Select</option>
+                            <?php selectRes($colour) ?>
                             <option value="White">White</option>
                             <option value="Black">Black</option>
                             <option value="Blue">Blue</option>
@@ -88,7 +88,7 @@
                     <div class="vda-group">
                         <label>Body Style</label>
                         <select class="form-select form-select-sm" name="body" id="">
-                            <option value="" readonly>Select</option>
+                            <?php selectRes($body) ?>
                             <option value="Saloon">Saloon</option>
                             <option value="Hatchback">Hatchback</option>
                             <option value="Estate">Estate</option>
@@ -103,7 +103,7 @@
                     <div class="vda-group">
                         <label>Vehicle Status</label>
                         <select class="form-select form-select-sm" name="vehStatus" id="">
-                            <option value="" readonly>Select</option>
+                            <?php selectRes($vehStatus) ?>
                             <option value="Mobile">Mobile</option>
                             <option value="Roadworthy">Roadworthy</option>
                             <option value="Unroadworthy">Unroadworthy</option>

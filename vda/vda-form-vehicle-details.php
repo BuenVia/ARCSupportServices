@@ -38,10 +38,10 @@
 
                 <div class="vda-group">
                     <label>ADAS</label>
-                    <select class="form-select form-select-sm" name="adas" id="" value="<?php echo $adas ?>">
-                        <option value="" disabled selected>Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
+                    <select class="form-select form-select-sm" name="adas" id="">
+                        <?php selectRes($adas) ?>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
                     </select>      
                 </div>
 

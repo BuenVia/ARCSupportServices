@@ -17,7 +17,7 @@
                     <div class="vda-group">
                         <label>NSF Tyre</label>
                         <select class="form-select form-select-sm" name="nsf" id="">
-                            <option value="" readonly>Select</option>
+                            <?php selectRes($nsfTyre) ?>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -35,7 +35,7 @@
                     <div class="vda-group">
                         <label>OSF Tyre</label>
                         <select class="form-select form-select-sm" name="osf" id="">
-                            <option value="" readonly>Select</option>
+                            <?php selectRes($osfTyre) ?>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -53,7 +53,7 @@
                     <div class="vda-group">
                         <label>NSR Tyre</label>
                         <select class="form-select form-select-sm" name="nsr" id="">
-                            <option value="" readonly>Select</option>
+                            <?php selectRes($nsrTyre) ?>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -71,7 +71,7 @@
                     <div class="vda-group">
                         <label>OSR Tyre</label>
                         <select class="form-select form-select-sm" name="osr" id="">
-                            <option value="" readonly>Select</option>
+                            <?php selectRes($osrTyre) ?>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>

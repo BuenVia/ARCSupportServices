@@ -82,4 +82,28 @@
       }
     }
 
+    // SELECT BOX OPTIONS
+    function selectRes($data) {
+      require'dbh.inc.php';
+
+      $formId = $_GET['formId'];
+      $sql = "SELECT * FROM vdaform WHERE id=".$formId.";";
+      $result = mysqli_query($conn, $sql);
+      $resultCheck = mysqli_num_rows($result);
+
+      if ($resultCheck > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {   
+                    if ($data) {
+                      $res = $data;
+                      echo ' <option value="'.$res.'">'.$res.'</option>';
+                    }
+                    else {
+                      $notDone = '<option value="" disabled selected>Select</option>';
+                      echo $notDone;
+                    }
+          }
+      }
+    }
+
+
 ?>
