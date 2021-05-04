@@ -345,6 +345,153 @@ if (isset($_POST['vda-form-submit'])) {
     mysqli_close($conn);
 }
 
+// PASSWORD RECOVERY SUBMIT
+if (isset($_POST['recover-submit'])) {
+
+    $selector = bin2hex(random_bytes(8));
+    $token = random_bytes(32);
+
+    $url = "www.buenvia.com/cielo/recover-new?selector=".$selector."&validator=".bin2hex($token);
+
+    $expires = date("U")+1800;
+
+    require 'dbh.inc.php';
+
+    $userEmail = $_POST['email'];
+
+    $sql = "DELETE FROM pwdReset WHERE pwdResetEmail=?";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)){
+      header("Location: ../login?error=sqlerrorPwdReset");
+      exit();
+    } else {
+      mysqli_stmt_bind_param($stmt, "s", $userEmail);
+      mysqli_stmt_execute($stmt);
+    }
+
+    $sql = "INSERT INTO pwdReset (pwdResetEmail, pwdResetSelector, pwdResetToken, pwdResetExpires) VALUES (?, ?, ?, ?);";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)){
+      header("Location: ../login?error=sqlerrorPwdReset");
+      exit();
+    } else {
+      $hashedToken = password_hash($token, PASSWORD_DEFAULT);
+      mysqli_stmt_bind_param($stmt, "ssss", $userEmail, $selector, $hashedToken, $expires);
+      mysqli_stmt_execute($stmt);
+    }
+
+    mysqli_stmt_close($stmt);
+    mysqli_close();
+
+    $to = $userEmail;
+    $subject = 'BUENVIA Password Reset';
+    $message = '<p>We have received a password reset request. The link to reset your password is below. If you did not make this request then please contact us immediately.</p>';
+    $message .= '<p>Here is your password link: <br>';
+    $message .= '<a href="'.$url.'">Buenvia Password Reset</a></p>';
+    $headers = "From: Buenvia <matt@buenvia.com>\r\n";
+    $headers .= "Reply-To: matt@buenvia.com>\r\n";
+    $headers .= "Content-type: text/html\r\n";
+
+    mail($to, $subject, $message, $headers);
+
+    header("Location: ../recover?recover=success");
+
+}
+
+// PASSWORD UPDATE SUBMIT
+if (isset($_POST['updatepsw-submit'])) {
+
+    $selector = $_POST['selector'];
+    $validator = $_POST['validator'];
+    $psw = $_POST['psw'];
+    $rpsw = $_POST['psw'];
+  
+    if (empty($selector) || empty($validator) || empty($psw) || empty($rpsw)) {
+        header("Location: ../recover?error=emptyfields");
+        exit();
+    } else if ($psw != $rpsw) {
+      header("Location: ../recover?error=pswnotmatch");
+      exit();
+    }
+  
+    $currentDate = date("U");
+  
+    require 'dbh.inc.php';
+  
+    $sql = "SELECT * FROM pwdReset WHERE pwdResetSelector=? AND pwdResetExpires >= ?";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)){
+      header("Location: ../login?error=sqlerrorPwdResetStage2");
+      exit();
+    } else {
+      mysqli_stmt_bind_param($stmt, "ss", $selector, $currentDate);
+      mysqli_stmt_execute($stmt);
+  
+      $result = mysqli_stmt_get_result($stmt);
+       if (!$row = mysqli_fetch_assoc($result)) {
+         echo 'You need to resubmit your request';
+         exit();
+       } else {
+  
+         $tokenBin = hex2bin($validator);
+         $tokenCheck = password_verify($tokenBin, $row['pwdResetToken']);
+  
+         if ($tokenCheck == false) {
+           echo 'You need to resubmit your reset request! V.2';
+           exit();
+         } elseif ($tokenCheck == true) {
+  
+           $tokenEmail = $row['pwdResetEmail'];
+  
+           $sql = "SELECT * FROM supplier WHERE email=?;";
+           $stmt = mysqli_stmt_init($conn);
+           if (!mysqli_stmt_prepare($stmt, $sql)){
+             header("Location: ../login?error=sqlerrorPwdResetStage2");
+             exit();
+           } else {
+              mysqli_stmt_bind_param($stmt, "s", $tokenEmail);
+              mysqli_stmt_execute($stmt);
+              $result = mysqli_stmt_get_result($stmt);
+               if (!$row = mysqli_fetch_assoc($result)) {
+                 echo 'You need to resubmit your request V.3';
+                 exit();
+               } else {
+  
+                 $sql = "UPDATE supplier SET psw=? WHERE email=?";
+                 $stmt = mysqli_stmt_init($conn);
+                 if (!mysqli_stmt_prepare($stmt, $sql)){
+                   header("Location: ../login?error=sqlerrorPwdResetStage2");
+                   exit();
+                 } else {
+                    $newPswHashed = password_hash($psw, PASSWORD_DEFAULT);
+  
+                    mysqli_stmt_bind_param($stmt, "ss", $newPswHashed, $tokenEmail);
+                    mysqli_stmt_execute($stmt);
+  
+                    $sql = "DELETE FROM pwdReset WHERE pwdResetEmail=?";
+                    $stmt = mysqli_stmt_init($conn);
+                    if (!mysqli_stmt_prepare($stmt, $sql)){
+                      header("Location: ../login?error=sqlerrorPwdResetStage4");
+                      exit();
+                    } else {
+  
+                       mysqli_stmt_bind_param($stmt, "s", $tokenEmail);
+                       mysqli_stmt_execute($stmt);
+                       header("Location: ../login?newpsw=passwordupdated");
+  
+                  }
+  
+               }
+           }
+  
+         }
+  
+       }
+  
+    }
+  }
+  }
+
 // FALLBACK - UNAUTHORISED ACCESS
 else {
     header("Location: ../index.php?access=unauthorised");
