@@ -1,3 +1,7 @@
+Forgot Password
+
+Change Password In Settings
+
 Show Forms 'Pending', 'Submitted' and 'Completed'
 (User -> can toggle between pending and submitted)
 (Admin -> can toggle between pending and completed)
@@ -5,10 +9,6 @@ Show Forms 'Pending', 'Submitted' and 'Completed'
 Completed Forms To Be Archived
 
 Photo Upload
-
-Forgot Password
-
-Change Password In Settings
 
 Cookies Policy
 
