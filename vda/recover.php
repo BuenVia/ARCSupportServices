@@ -10,7 +10,7 @@
     </div>
 
     <div class="column-33" style="text-align:center">
-        <h1 style="color:#00dddd"><b>Welcome to Cielo.</b></h1>
+        <h1 style="color:#00dddd"><b>Welcome to ARC Online.</b></h1>
             <div class="contactcard2" style="padding:25px">
 
                   <h1 style="color:#00dddd"><b>Recover Password</b></h1>
@@ -25,7 +25,7 @@
                   }
                   ?>
 
-                  <form action="includes/create.inc.php" method="POST">
+                  <form action="includes/vda.inc.php" method="POST">
                     <a>An email with a temporary password will be sent to you.</a>
                     <br><br>
                   <label style="color:#00dddd">Your Email</label><br>
