@@ -1,9 +1,9 @@
 :root {
     --bkg-clr-main: #111;
     --bkg-clr-one: #999;
-    --bkg-clr-two: #ffff00;
-    --txt-clr-main: #fff;
-    --txt-clr-one: #ffff00;
+    --bkg-clr-two: #999;
+    --txt-clr-main: #999;
+    --txt-clr-one: #999;
     --txt-clr-two: #111;
 }
 *{
@@ -13,12 +13,12 @@
 body {
     height: 100vh;
     overflow: scroll;
-    background-image: url(../images/background4.jpg);
+  /*  background-image: url(../images/background4.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center right;
     background-attachment: fixed;
-    background-color: var(--bkg-clr-main);
+    background-color: var(--bkg-clr-main); */
 }
 /* TEMPORARY BACKGROUND COLOUR ------ TO BE DELETED AND THE ABOVE CODE 'UNCOMMENTED' */
 
@@ -48,14 +48,16 @@ header .responsive a {
 }
  img {
     align-items: 0 auto;
-    width: 150px;
+    width: 250px;
     margin: 10px;
 }
 
 .box {
-    border: 1px solid white;
+    border: 1px solid #999;
+    border-radius: 10px;
     padding: 10px;
     margin: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 /*LOGIN FORM*/
@@ -64,7 +66,7 @@ label {
 }
 .btn1 {
     background-color: var(--bkg-clr-two);
-    margin: 10px 0 10px 0;
+    margin-top: 10px;
     border-radius: 10px;
     height: 40px;
     border: none;

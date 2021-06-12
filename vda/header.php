@@ -22,20 +22,22 @@ session_start();
 
 <div class="container">
   <div class="row">
-    <div class="col-sm">
-    <div class="col-sm" style="text-align: center">
-                    <a href="login.php"><img src="../images/new_arc_logo.png"></a>
-                </div>
+
+    <div class="col-sm" style="text-align: left">
+        <a href="login.php"><img src="../images/new_arc_logo.png"></a>
     </div>
+
+
+
     <div class="col-sm" style="text-align: right">
         <div class="box">
             <?php
                 if (isset($_SESSION['id'])) {
 
-                    echo '<p style="color:white">You are logged in as <a style="color:white"><b><u>'.$_SESSION['id'].'</u></b></a></p>
+                    echo '<p>You are logged in as <a style="color:white"><b><u>'.$_SESSION['id'].'</u></b></a></p>
                         <p><a href="includes/logoutus.inc.php"><button class="btn1"><b><u>Logout</b></u></button></a></p>';
                     }   else {
-                                echo '<p style="color:white"><b>You are <u>LOGGED OUT</u></b></p>';
+                                echo '<p><b>You are <u>LOGGED OUT</u></b></p>';
                             }
             ?>
         </div>
