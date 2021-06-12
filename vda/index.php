@@ -11,8 +11,8 @@
                     <form action="includes/loginus.inc.php" method="POST">
                        
                     <div class="form-group">
-                            <label for="name">Username</label>
-                            <input class="form-control" type="text" name="user" id="" placeholder="Username...">
+                            <label for="name">Email</label>
+                            <input class="form-control" type="text" name="user" id="" placeholder="Email...">
                         </div>
                         <div class="form-group">
                             <label for="email">Password</label>
