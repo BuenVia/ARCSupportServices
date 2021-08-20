@@ -1,0 +1,79 @@
+body {
+    background-color: white;
+}
+* {
+    box-sizing: border-box;
+}
+.column20 {
+    float: left;
+    width: 20%;
+}
+.column50 {
+    float: left;
+    width: 50%;
+}
+.column60 {
+    float: left;
+    width: 60%;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+.row:after {
+content: "";
+display: table;
+clear: both
+}
+@media screen and (max-width: 800px) {
+    .column20, .column60 {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .column50 {
+        width: 100%;
+    }
+}
+.container {
+    background-color: black;
+    border: 1px solid #ffff00;
+    border-radius: 10px;
+    color:white;
+    padding: 10px;
+}
+input[type=text] {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 4px;
+    width: 80%;
+}
+select {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 4px;
+    width: 40%;  
+}
+
+/*Buttons*/
+.btn1 {
+
+}
+.sub {
+    background-color: #FFFF00;
+    color: black;
+    padding: 6px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+}
+.sub:hover {
+    background-color: #666600;
+    color: black;
+}

@@ -1,0 +1,32 @@
+:root {
+    --bkg-clr-main: #111;
+    --bkg-clr-one: #999;
+    --bkg-clr-two: #999;
+    --txt-clr-main: #999;
+    --txt-clr-one: #999;
+    --txt-clr-two: #111;
+}
+*{
+    box-sizing: border-box;
+    font-family: 'Play', sans-serif;
+}
+body {
+    height: 100vh;
+    overflow: scroll;
+    /*background-image: url(../images/background4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center right;
+    background-attachment: fixed;
+    background-color: var(--bkg-clr-main);*/ 
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both
+  }
+
+  .logo ,img {
+      height: 100px;    
+  }

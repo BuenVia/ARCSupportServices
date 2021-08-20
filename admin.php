@@ -13,9 +13,40 @@
     <title>ARC Admin</title>
 </head>
 <body>
-    <header>
-        <h1>ARC Support Services Admin Page</h1>
-    </header>
+
+<header>
+        <div class="header" id="navbar">
+            
+            <a href="javascript:void(0)" class="icon" onclick="navHead()">
+                <i class="fas fa-bars"></i>
+            </a>
+            
+            <img src="images/new_arc_logo.png" alt="ARC Support Services">
+
+            <section class="profile">
+                <h1>JAMES CLIFFORD</h1>
+                <h2>Email:</h2>
+                <h2>james@arcsupportservices.co.uk</h2>
+                <h2>Tel: +44 7956 202 722</h2>
+            </section>
+
+
+            <a href="javascrtipt:void(0)">Home</a>
+            <a href="javascrtipt:void(0)" id="abtBtn">About</a>
+            <a href="javascrtipt:void(0)" id="conBtn">Contact</a>
+            <a href="vda/" id="abtBtn" target="_blank">VDA</a>
+            <a href="admin/" id="conBtn" target="_blank">Admin</a>              
+
+        </div>
+</header>
+
+<main>
+<section class="intro">
+                <h1>WE BELIEVE IN CHALLENGING THE STATUS QUO!</h1><br>
+                <p>A manager accepts, the leader challenges...</p>
+                <div id="success"></div>
+            </section>
+</main>
 
 </body>
 </html>
