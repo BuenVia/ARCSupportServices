@@ -60,7 +60,26 @@ if (isset($_POST['comment-submit'])) {
                 else {
                     mysqli_stmt_bind_param($stmt, "sss", $date, $name, $email);
                     mysqli_stmt_execute($stmt);
-                    header("Location: ../ebook.html?dlsubmit=success");
+
+
+                    ini_set( 'display_errors', 1 );
+                    error_reporting( E_ALL );
+            
+                    $from = "webmaster@arcsupportservices.co.uk";
+                    $to = "james@arcsupportservices.co.uk";
+                    $subject = "DOWNLOAD: eBook";
+                    $headers = "From:" . $from;
+            
+                    $bodyParagraphs = ["Name: {$name}", "Email: {$email}", "Message: ", $date];
+                    $body = join(PHP_EOL, $bodyParagraphs);
+            
+                    if(mail($to,$subject,$body,$headers)) {
+                      header("Location: ../index.html?commentsubmit=success");
+                    } else {
+                        header("Location: ../index.html?commentsubmit=fail");
+                    }
+
+
                     exit();
                     }
             }
