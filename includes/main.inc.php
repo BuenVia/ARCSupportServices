@@ -43,6 +43,9 @@ if (isset($_POST['comment-submit'])) {
         header("Location: ../index.html?error=emptyfields&name-".$name."&cname=".$email);
         exit();
     }
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "Invalid email";
+    }
     else {
         $sql = "SELECT date FROM ebook WHERE date=?";
         $stmt = mysqli_stmt_init($conn);

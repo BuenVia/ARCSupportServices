@@ -52,7 +52,7 @@
             </section>
 
             <section>
-                <p>Download our latest eBook<br>
+                <p>Download our latest eBook.........<<br>
                     "Change Is Inevitable, Growth Is Optional"</p>
                     <button id="ebkBtn"><i class="fas fa-book"></i> Free eBook</button>
             </section>
