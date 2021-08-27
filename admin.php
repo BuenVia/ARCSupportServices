@@ -1,3 +1,5 @@
+<?php require 'includes/func.inc.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,9 +37,7 @@
 
                 <a href="javascrtipt:void(0)">Home</a>
                 <a href="javascrtipt:void(0)" id="abtBtn">About</a>
-                <a href="javascrtipt:void(0)" id="conBtn">Contact</a>
-                <a href="vda/" id="abtBtn" target="_blank">VDA</a>
-                <a href="admin/" id="conBtn" target="_blank">Admin</a>              
+                <a href="javascrtipt:void(0)" id="conBtn">Contact</a>    
 
             </div>
     </header>
@@ -46,15 +46,41 @@
     <main>
 
             <section class="intro">
-                <h1>WE BELIEVE IN CHALLENGING THE STATUS QUO!</h1><br>
-                <p>A manager accepts, the leader challenges...</p>
-                <div id="success"></div>
+                <h1>eBook Download Records</h1>
             </section>
 
             <section>
-                <p>Download our latest eBook.........<<br>
-                    "Change Is Inevitable, Growth Is Optional"</p>
-                    <button id="ebkBtn"><i class="fas fa-book"></i> Free eBook</button>
+                <table style="background: black; color: #fff">
+                    <tr style="background:#999">
+                        <th style="font-size: 15px; width:200px">Date:</th>
+                        <th style="font-size: 15px; width:250px">Name:</th>
+                        <th style="font-size: 15px; width:350px">Email:</th>
+                    </tr>
+
+                    <tr>
+                    <?php
+                        require'includes/dbh.inc.php';
+                            $sql = "SELECT * FROM ebook";
+                            $result = mysqli_query($conn, $sql);
+                            $resultCheck = mysqli_num_rows($result);
+
+                            if ($resultCheck > 0) {
+                                while ($row = mysqli_fetch_assoc($result)) {
+
+                                $bsid = $row['id'];
+
+                                echo
+                                '<tr>
+                                <td>'.$row['date'].'</td>
+                                <td>'.$row['name'].'</td>
+                                <td>'.$row['email'].'</td>
+                                </tr>';
+                                }
+                            }
+                        ?>
+                    </tr>
+
+                </table>
             </section>
 
             <section class="social">
